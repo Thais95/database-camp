@@ -1,22 +1,36 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
-import { Container, InnerContainer } from '../../components/Container.styled';
+import { Container, InnerContainer } from './Dashboard.styled'
+import { Aside } from '../../components/Aside/Aside';
+import { Header } from '../../components/Header/Header';
+import { IChildren, IPersona } from '../../utils/interfaces';
+import { api } from '../../utils/api';
+import { PersonasContext } from '../../context/PersonasContext';
 
 export const Dashboard = () => {
-  const { handleLogout } = useContext(AuthContext);
-  const token = localStorage.getItem('token');
+  
+  const { getPersonasList, persona } = useContext(PersonasContext);
 
+  useEffect(() => {
+    getPersonasList()
+  }, [])
+ 
   return (
     <Container>
+      <Aside />
       <InnerContainer>
-        <h1>Dashboard</h1>
-        <form>
-          <div>
-            <input type="submit" onClick={handleLogout} value={"Sair da conta"} />
-            <button><Link to='/persona/create'>Cadastrar</Link></button>
-          </div>
-        </form>
+      <Header/>
+      <>
+      {persona?.map((person) => {
+        return <div>
+          <p>{person.nome}</p>
+          <p>{person.cpf}</p>
+          <p>{person.dataNascimento}</p>
+          <p>{person.email}</p>
+        </div>
+        })}
+      </>
       </InnerContainer>
     </Container>
   )

@@ -2,34 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     height: 100vh;
-    width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: space-around;
 `
 
-export const BannerContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 90%;
-    overflow: hidden;
-    margin-left: 100px;
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        -webkit-user-drag: none;
-    }
-`
 
 export const InnerContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 50%;
+    width: 100%;
     height: 100%;
     gap: 20px;
     h1 {

@@ -9,6 +9,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'nprogress/nprogress.css';
 import { PersonasProvider } from './context/PersonasContext';
+import { Address } from './pages/Address/Address';
+import { Contact } from './pages/Contact/Contact';
 
 export const Router = () => {
   return (
@@ -22,6 +24,8 @@ export const Router = () => {
             <Route element={<PrivateRoute />}>
               <Route path='/dashboard' element={<Dashboard />} />
               <Route path='/persona/create' element={<AddPersona />} />
+              <Route path='/address' element={<Address />} />
+               <Route path='/contact' element={<Contact />} />
             </Route>
           </Routes>
         </PersonasProvider>

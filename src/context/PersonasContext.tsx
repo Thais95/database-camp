@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { IPersonasContext, IChildren, IPersona } from "../utils/interfaces";
 import { api } from "../utils/api";
 import { toast } from "react-toastify";
@@ -10,6 +10,10 @@ export const PersonasContext = createContext({} as IPersonasContext);
 
 export const PersonasProvider = ({ children }: IChildren) => {
   const token = localStorage.getItem('token');
+
+  const [ persona, setPersona ] = useState<IPersona[]>([]);
+
+
 
   const createPersona = async (persona: IPersona) => {
     try {
@@ -28,8 +32,21 @@ export const PersonasProvider = ({ children }: IChildren) => {
     }
   }
 
+  const getPersonasList = async () => {
+    try{
+      nProgress.start();
+      const { data } = await api.get('/pessoa');
+      setPersona(data)
+    } catch (error) {
+      console.error(error);
+      toast.error('Ocorreu algum erro, por favor tente novamente!', toastConfig)
+    } finally {
+      nProgress.done();
+    }
+  }
+
   return (
-    <PersonasContext.Provider value={{ createPersona }}>
+    <PersonasContext.Provider value={{ createPersona, getPersonasList, persona }}>
       {children}
     </PersonasContext.Provider>
   )

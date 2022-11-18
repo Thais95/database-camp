@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IAuthContext, IChildren, IUser } from '../utils/interfaces';
 import { api } from '../utils/api';
@@ -11,6 +11,8 @@ export const AuthContext = createContext({} as IAuthContext);
 export const AuthProvider = ({ children }: IChildren) => {
     const navigate = useNavigate();
 
+    const [ user, setUser ] = useState<IUser>();
+
     const userSignup = async (newUser: IUser) => {
         try {
             nProgress.start();
@@ -18,7 +20,8 @@ export const AuthProvider = ({ children }: IChildren) => {
             await api.post('/auth/create', newUser);
 
             toast.success('Usuário cadastrado com sucesso!', toastConfig);
-            navigate('/');
+            setUser(newUser)
+            navigate('/dashboard');
         } catch (error) {
             toast.error('Houve algum erro, por favor tente novamente!', toastConfig);
             console.log(error);
@@ -35,6 +38,7 @@ export const AuthProvider = ({ children }: IChildren) => {
             api.defaults.headers.common['Authorization'] = data;
             localStorage.setItem('token', data);
 
+            setUser(user);
             navigate('/dashboard')
         } catch (error) {
             toast.error('Houve algum erro, por favor tente novamente!', toastConfig);
@@ -48,11 +52,12 @@ export const AuthProvider = ({ children }: IChildren) => {
         localStorage.removeItem('token');
         api.defaults.headers.common['Authorization'] = undefined;
         
+        setUser(undefined)
         navigate('/');
     }
 
     return (
-        <AuthContext.Provider value={{ userSignup, handleLogin, handleLogout }}>
+        <AuthContext.Provider value={{ userSignup, handleLogin, handleLogout, user }}>
             {children}
         </AuthContext.Provider>
     )

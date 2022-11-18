@@ -12,7 +12,8 @@ export interface IChildren {
 export interface IAuthContext {
     userSignup: (newUser: IUser) => Promise<void>,
     handleLogin: (user: IUser) => Promise<void>,
-    handleLogout: () => Promise<void>
+    handleLogout: () => Promise<void>,
+    user: IUser | undefined
 }
 
 export interface IPersona {
@@ -23,7 +24,9 @@ export interface IPersona {
 }
 
 export interface IPersonasContext {
-    createPersona: (Persona: IPersona) => Promise<void>
+    createPersona: (Persona: IPersona) => Promise<void>,
+    getPersonasList: () => Promise<void>,
+    persona: IPersona[]
 }
 
 export interface IAddress {
