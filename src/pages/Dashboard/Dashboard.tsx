@@ -1,11 +1,8 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect   } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthContext';
 import { Container, InnerContainer } from './Dashboard.styled'
 import { Aside } from '../../components/Aside/Aside';
 import { Header } from '../../components/Header/Header';
-import { IChildren, IPersona } from '../../utils/interfaces';
-import { api } from '../../utils/api';
 import { PersonasContext } from '../../context/PersonasContext';
 
 export const Dashboard = () => {
