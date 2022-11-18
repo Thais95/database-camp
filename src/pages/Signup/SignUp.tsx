@@ -26,13 +26,13 @@ export const SignUp = () => {
                     <div>
                         <label htmlFor="login">Usuário</label>
                         <input type="text" id="login" {...register("login")} />
-                        {errors.login && <p>{errors.login.message}</p>}
+                        {errors.login && <span>{errors.login.message}</span>}
                     </div>
 
                     <div>
                         <label htmlFor="senha">Senha</label>
                         <input type="text" id="senha" {...register("senha")} />
-                        {errors.senha && <p>{errors.senha.message}</p>}
+                        {errors.senha && <span>{errors.senha.message}</span>}
                     </div>
 
                     <div>
