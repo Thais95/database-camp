@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
-import { Container, LoginContainer } from './LoginContainer.styled';
+import { AuthContext } from '../../context/AuthContext';
+import { Container, InnerContainer } from '../../components/Container.styled';
 
 export const Dashboard = () => {
   const { handleLogout } = useContext(AuthContext);
@@ -9,7 +9,7 @@ export const Dashboard = () => {
 
   return (
     <Container>
-      <LoginContainer>
+      <InnerContainer>
         <h1>Dashboard</h1>
         <form>
           <div>
@@ -17,7 +17,7 @@ export const Dashboard = () => {
             <button><Link to='/persona/create'>Cadastrar</Link></button>
           </div>
         </form>
-      </LoginContainer>
+      </InnerContainer>
     </Container>
   )
 }

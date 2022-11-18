@@ -1,10 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
-import { PersonasContext } from '../context/PersonasContext';
-import { IPersona } from '../utils/interfaces';
+import { PersonasContext } from '../../context/PersonasContext';
+import { IPersona } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { personaFormSchema } from '../utils/schemas';
-import { Container, LoginContainer } from './LoginContainer.styled';
+import { personaFormSchema } from '../../utils/schemas';
+import { Container, InnerContainer } from '../../components/Container.styled';
 import InputMask from 'react-input-mask';
 
 export const AddPersona = () => {
@@ -15,7 +15,7 @@ export const AddPersona = () => {
 
     return (
         <Container>
-            <LoginContainer>
+            <InnerContainer>
                 <form onSubmit={handleSubmit((data: IPersona) => createPersona(data))}>
                     <div>
                         <label htmlFor="nome">Nome</label>
@@ -45,7 +45,7 @@ export const AddPersona = () => {
                         <input type="submit" value="Cadastrar" />
                     </div>
                 </form>
-            </LoginContainer>
+            </InnerContainer>
         </Container>
     )
 }

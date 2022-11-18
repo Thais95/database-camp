@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, Navigate } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
-import { IUser } from '../utils/interfaces';
+import { AuthContext } from '../../context/AuthContext';
+import { IUser } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { userFormSchema } from '../utils/schemas';
-import { BannerContainer, Container, LoginContainer } from './LoginContainer.styled';
+import { userFormSchema } from '../../utils/schemas';
+import { BannerContainer, Container, InnerContainer } from '../../components/Container.styled';
 import Banner from '../assets/banner.svg';
 
 export const Login = () => {
@@ -23,9 +23,9 @@ export const Login = () => {
   return (
     <Container>
       <BannerContainer>
-        <img src={Banner} alt="Árvores sakura com o monte Fuji ao fundo, desenho em tonalidades azul e rosa" />
+        <img src={Banner} alt="Desenho com tons de verde de um acampamento" />
       </BannerContainer>
-      <LoginContainer>
+      <InnerContainer>
         <h1>LOGIN</h1>
 
         <form onSubmit={handleSubmit(data => handleLogin(data))}>
@@ -50,7 +50,7 @@ export const Login = () => {
           <p>Não tem uma conta?</p>
           <Link to="/signup">Cadastre-se agora</Link>
         </div>
-      </LoginContainer>
+      </InnerContainer>
     </Container>
   )
 }

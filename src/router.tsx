@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
-import { Login } from './pages/Login';
-import { SignUp } from './pages/SignUp';
-import { Dashboard } from './pages/Dashboard';
-import { AddPersona } from './pages/CreatePersona';
+import { Login } from './pages/Signin/Login';
+import { SignUp } from './pages/Signup/SignUp';
+import { Dashboard } from './pages/Dashboard/Dashboard';
+import { AddPersona } from './pages/CreatePerson/CreatePersona';
 import { PrivateRoute } from './components/PrivateRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
