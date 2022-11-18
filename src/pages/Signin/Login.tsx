@@ -6,7 +6,7 @@ import { IUser } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { userFormSchema } from '../../utils/schemas';
 import { BannerContainer, Container, InnerContainer } from '../../components/Container.styled';
-import Banner from '../assets/banner.svg';
+import Banner from '../../assets/banner.svg';
 
 export const Login = () => {
   const { handleLogin } = useContext(AuthContext);
