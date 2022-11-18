@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IAuthContext, IChildren, IUser } from '../utils/interfaces';
 import { api } from '../utils/api';
@@ -9,7 +9,6 @@ import nProgress from 'nprogress';
 export const AuthContext = createContext({} as IAuthContext);
 
 export const AuthProvider = ({ children }: IChildren) => {
-    // const [token, setToken] = useState<string>(localStorage.getItem('token') || '');
     const navigate = useNavigate();
 
     const userSignup = async (newUser: IUser) => {

@@ -8,7 +8,7 @@ export const userFormSchema = yup.object().shape({
 export const personaFormSchema = yup.object().shape({
     nome: yup.string().required('Por favor, digite seu nome').min(2, 'O nome precisa ter no mínimo 2 caracteres'),
     dataNascimento: yup.string().required('Por favor, digite sua data de nascimento'),
-    cpf: yup.string().required('Por favor, digite seu CPF').length(11, 'O CPF precisa conter 11 dígitos'),
+    cpf: yup.string().required('Por favor, digite seu CPF').length(14, 'O CPF precisa conter 11 dígitos'),
     email: yup.string().required('Por favor, digite seu email').email('Por favor, digite um email válido')
 })
 
