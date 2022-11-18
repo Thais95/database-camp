@@ -4,13 +4,16 @@ import { api } from "../utils/api";
 import { toast } from "react-toastify";
 import { toastConfig } from "../utils/toast";
 import nProgress from "nprogress";
+import { useNavigate } from "react-router-dom";
 
 export const PersonasContext = createContext({} as IPersonasContext);
 
 export const PersonasProvider = ({ children }: IChildren) => {
   const token = localStorage.getItem('token');
 
-  const [ persona, setPersona ] = useState<IPersona[]>([]);
+  const [ persona, setPersona ] = useState<IPersona[]>();
+
+  const navigate = useNavigate();
 
   const createPersona = async (persona: IPersona) => {
     try {
@@ -18,9 +21,13 @@ export const PersonasProvider = ({ children }: IChildren) => {
       persona.cpf = persona.cpf.replace(/[^\d]/g, '');
 
       api.defaults.headers.common['Authorization'] = token;
+      console.log(persona);
+      
       await api.post('/pessoa', persona);
-
+      console.log(persona);
+      
       toast.success('Pessoa cadastrada com sucesso!', toastConfig);
+      navigate('/dashboard')
     } catch (error) {
       toast.error('Ocorreu algum erro, por favor tente novamente!', toastConfig);
       console.error(error);
@@ -45,6 +52,24 @@ export const PersonasProvider = ({ children }: IChildren) => {
     }
   }
 
+
+
+  const editPersona = async (data: IPersona) => {
+    try{
+      nProgress.start()
+      console.log(data);
+      data.cpf = data.cpf.replace(/[^\d]/g, '');
+      await api.put(`/pessoa/${data.idPessoa}`, data);
+      toast.success("Usuário editado!", toastConfig);
+    } catch (error){
+        console.error(error);
+        console.log(data);
+        toast.error("Algo deu errado, tente novamente", toastConfig);
+    } finally{
+        nProgress.done();
+    };
+  };
+
   const deletePersona = async (idPessoa: string) => {
     try {
         nProgress.start();
@@ -63,7 +88,7 @@ export const PersonasProvider = ({ children }: IChildren) => {
 }
 
   return (
-    <PersonasContext.Provider value={{ createPersona, getPersonasList, persona, deletePersona }}>
+    <PersonasContext.Provider value={{ createPersona, getPersonasList, persona, editPersona, deletePersona }}>
       {children}
     </PersonasContext.Provider>
   )

@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Container, InnerContainer } from '../../components/DashboardContainer/Container.styled'
 import { ContentContainer, DashboardContent, PersonCard } from './Dashboard.styled';
 import { Aside } from '../../components/Aside/Aside';
@@ -16,6 +17,8 @@ export const Dashboard = () => {
   useEffect(() => {
     getPersonasList()
   }, [])
+
+  const navigate = useNavigate();
 
   function handleDeleteUser(idPessoa: number, nome: string) {
     setModal(true);
@@ -40,6 +43,7 @@ export const Dashboard = () => {
                   <p>{person.dataNascimento}</p>
                   <p>{person.email}</p>
                   <button onClick={() => { handleDeleteUser(person.idPessoa, person.nome) }} >Remover</button>
+                  <button onClick={() => { navigate('/persona/edit', {state: person}) }}>Editar</button>
                 </PersonCard>
               )
             })}
