@@ -26,11 +26,13 @@ export const Login = () => {
         <img src={Banner} alt="Desenho com tons de verde de um acampamento" />
       </BannerContainer>
       <InnerContainer>
-        <h1>LOGIN</h1>
+        <h2>DataBase Camp</h2>
+
+        <h1>Entre na sua conta</h1>
 
         <form onSubmit={handleSubmit(data => handleLogin(data))}>
           <div>
-            <label htmlFor="login">Usuário</label>
+            <label htmlFor="login">Login</label>
             <input type="text" id="login" {...register("login")} />
             {errors.login && <span>{errors.login.message}</span>}
           </div>
@@ -47,8 +49,8 @@ export const Login = () => {
         </form>
 
         <div className='signup'>
-          <p>Não tem uma conta?</p>
-          <Link to="/signup">Cadastre-se agora</Link>
+          <p>Novo por aqui?</p>
+          <Link to="/signup">Cadastre-se</Link>
         </div>
       </InnerContainer>
     </Container>
