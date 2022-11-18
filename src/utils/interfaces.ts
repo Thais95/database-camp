@@ -13,7 +13,6 @@ export interface IAuthContext {
     userSignup: (newUser: IUser) => Promise<void>,
     handleLogin: (user: IUser) => Promise<void>,
     handleLogout: () => Promise<void>,
-    user: IUser | undefined
 }
 
 export interface IPersona {
@@ -21,14 +20,22 @@ export interface IPersona {
     dataNascimento: string,
     cpf: string,
     email: string,
-    idPessoa: string
+    idPessoa: number
+}
+
+export interface IDeletePersona {
+    show: boolean,
+    setModal: (idPessoa: boolean) => void,
+    idPessoa: number | null,
+    nome: string | null
 }
 
 export interface IPersonasContext {
     createPersona: (Persona: IPersona) => Promise<void>,
     getPersonasList: () => Promise<void>,
+    deletePersona: (idPessoa: string) => Promise<void>,
     editPersona: (data: IPersona ) => Promise<void>,
-    persona: IPersona[] | undefined
+    persona: IPersona[]
 }
 
 export interface IAddress {

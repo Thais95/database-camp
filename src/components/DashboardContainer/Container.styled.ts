@@ -2,36 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     height: 100vh;
-    width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-`
-
-export const BannerContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 90%;
-    overflow: hidden;
-    margin-left: 100px;
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        -webkit-user-drag: none;
-    }
 `
 
 export const InnerContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 50%;
+    width: calc(100% - 300px);
     height: 100%;
-    gap: 20px;
     h1 {
         font-size: 2.2rem;
         font-weight: 600;
@@ -39,7 +19,6 @@ export const InnerContainer = styled.div`
         margin-bottom: 50px;
         color: var(--soft-blue);
     }
-
     form {
         display: flex;
         flex-direction: column;
@@ -113,4 +92,13 @@ export const InnerContainer = styled.div`
             }
         }
     }
+`
+
+export const ContentContainer = styled.div`
+    margin-top: 80px;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 30px 40px;
 `

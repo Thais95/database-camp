@@ -5,7 +5,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { IUser } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { userFormSchema } from '../../utils/schemas';
-import { BannerContainer, Container, InnerContainer } from '../../components/Container.styled';
+import { BannerContainer, Container, InnerContainer } from '../../components/LoginContainer/Container.styled';
 import Banner from '../../assets/banner.svg';
 
 export const Login = () => {
@@ -26,19 +26,21 @@ export const Login = () => {
         <img src={Banner} alt="Desenho com tons de verde de um acampamento" />
       </BannerContainer>
       <InnerContainer>
-        <h1>LOGIN</h1>
+        <h2>DataBase Camp</h2>
+
+        <h1>Entre na sua conta</h1>
 
         <form onSubmit={handleSubmit(data => handleLogin(data))}>
           <div>
-            <label htmlFor="login">Usuário</label>
+            <label htmlFor="login">Login</label>
             <input type="text" id="login" {...register("login")} />
-            {errors.login && <p>{errors.login.message}</p>}
+            {errors.login && <span>{errors.login.message}</span>}
           </div>
 
           <div>
             <label htmlFor="senha">Senha</label>
             <input type="password" id="senha" {...register("senha")} />
-            {errors.senha && <p>{errors.senha.message}</p>}
+            {errors.senha && <span>{errors.senha.message}</span>}
           </div>
 
           <div>
@@ -47,8 +49,8 @@ export const Login = () => {
         </form>
 
         <div className='signup'>
-          <p>Não tem uma conta?</p>
-          <Link to="/signup">Cadastre-se agora</Link>
+          <p>Novo por aqui?</p>
+          <Link to="/signup">Cadastre-se</Link>
         </div>
       </InnerContainer>
     </Container>

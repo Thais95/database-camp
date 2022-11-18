@@ -1,8 +1,13 @@
 import * as yup from 'yup';
 
 export const userFormSchema = yup.object().shape({
-    login: yup.string().required('Por favor, digite seu login').min(2, 'O login deve ter no mínimo 2 caracteres'),
-    senha: yup.string().required('Por favor, digite sua senha').min(3, 'A senha deve ter no mínimo 3 caracteres')
+    login: yup.string().required('Por favor, digite seu login!').min(2, 'O login deve ter no mínimo 2 caracteres'),
+    senha: yup.string().required('Por favor, digite sua senha!').min(3, 'A senha deve ter no mínimo 3 caracteres')
+})
+
+export const userSignupFormSchema = yup.object().shape({
+    login: yup.string().required('Por favor, preencha o campo de login!').min(2, 'O login deve ter no mínimo 2 caracteres'),
+    senha: yup.string().required('Por favor, preencha o campo de senha!').min(3, 'A senha deve ter no mínimo 3 caracteres')
 })
 
 export const personaFormSchema = yup.object().shape({
