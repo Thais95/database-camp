@@ -20,12 +20,14 @@ export interface IPersona {
     nome: string,
     dataNascimento: string,
     cpf: string,
-    email: string
+    email: string,
+    idPessoa: string
 }
 
 export interface IPersonasContext {
     createPersona: (Persona: IPersona) => Promise<void>,
     getPersonasList: () => Promise<void>,
+    editPersona: (data: IPersona ) => Promise<void>,
     persona: IPersona[] | undefined
 }
 

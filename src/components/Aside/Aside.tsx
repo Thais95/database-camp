@@ -15,10 +15,12 @@ export const Aside = () => {
 
   return (
     <AsideStyled>
-      <div className='logo'>
-        <img src={logo} alt="Logo"/>
-        <h1>DBC</h1>
-      </div>
+      <Link to='/dashboard'>
+        <div className='logo'>
+          <img src={logo} alt="Logo"/>
+          <h1>DBC</h1>
+        </div>
+      </Link>
       
       <hr />
 

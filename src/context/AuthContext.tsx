@@ -10,13 +10,13 @@ export const AuthContext = createContext({} as IAuthContext);
 
 export const AuthProvider = ({ children }: IChildren) => {
     const navigate = useNavigate();
-
+    
     const [ user, setUser ] = useState<IUser>();
 
     const userSignup = async (newUser: IUser) => {
         try {
             nProgress.start();
-
+            
             await api.post('/auth/create', newUser);
 
             toast.success('Usuário cadastrado com sucesso!', toastConfig);
@@ -36,6 +36,7 @@ export const AuthProvider = ({ children }: IChildren) => {
 
             const { data } = await api.post('/auth', user);
             api.defaults.headers.common['Authorization'] = data;
+    
             localStorage.setItem('token', data);
 
             setUser(user);

@@ -11,6 +11,7 @@ import 'nprogress/nprogress.css';
 import { PersonasProvider } from './context/PersonasContext';
 import { Address } from './pages/Address/Address';
 import { Contact } from './pages/Contact/Contact';
+import { EditPerson } from './pages/EditPerson/EditPerson';
 
 export const Router = () => {
   return (
@@ -24,8 +25,9 @@ export const Router = () => {
             <Route element={<PrivateRoute />}>
               <Route path='/dashboard' element={<Dashboard />} />
               <Route path='/persona/create' element={<AddPersona />} />
+              <Route path='/persona/edit' element={<EditPerson />} />
               <Route path='/address' element={<Address />} />
-               <Route path='/contact' element={<Contact />} />
+              <Route path='/contact' element={<Contact />} />
             </Route>
           </Routes>
         </PersonasProvider>
