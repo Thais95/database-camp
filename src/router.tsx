@@ -12,6 +12,7 @@ import { PersonasProvider } from './context/PersonasContext';
 import { Address } from './pages/Address/Address';
 import { Contact } from './pages/Contact/Contact';
 import { EditPerson } from './pages/EditPerson/EditPerson';
+import { Home } from './pages/Home/Home';
 
 export const Router = () => {
   return (
@@ -23,6 +24,7 @@ export const Router = () => {
             <Route path='/' element={<Login />} />
             <Route path='/signup' element={<SignUp />} />
             <Route element={<PrivateRoute />}>
+              <Route path='/home' element={<Home />} />
               <Route path='/dashboard' element={<Dashboard />} />
               <Route path='/persona/create' element={<AddPersona />} />
               <Route path='/persona/edit' element={<EditPerson />} />

@@ -27,6 +27,12 @@ export const Header = () => {
 
             <nav>
               <ul>
+              <li>
+                  <NavLink to="/home"
+                    style={({ isActive }) =>
+                      isActive ? activeStyle : undefined
+                    }>Início</NavLink>
+                </li>
                 <li>
                   <NavLink to="/dashboard"
                     style={({ isActive }) =>
