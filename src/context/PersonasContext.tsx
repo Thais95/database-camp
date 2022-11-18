@@ -36,7 +36,7 @@ export const PersonasProvider = ({ children }: IChildren) => {
       api.defaults.headers.common['Authorization'] = token;
       const { data } = await api.get('/pessoa');
 
-      setPersona(data)
+      setPersona(data.content)
     } catch (error) {
       console.error(error);
       toast.error('Ocorreu algum erro, por favor tente novamente!', toastConfig)

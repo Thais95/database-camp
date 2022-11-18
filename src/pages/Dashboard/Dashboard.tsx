@@ -14,6 +14,7 @@ export const Dashboard = () => {
 
   useEffect(() => {
     getPersonasList()
+    console.log(persona)
   }, [])
 
   function handleDeleteUser(idPessoa: number, nome: string) {

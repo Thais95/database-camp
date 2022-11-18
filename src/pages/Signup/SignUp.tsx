@@ -4,7 +4,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { IUser } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { userFormSchema } from '../../utils/schemas';
-import { BannerContainer, Container, InnerContainer } from '../../components/Container.styled';
+import { BannerContainer, Container, InnerContainer } from '../../components/LoginContainer/Container.styled';
 import Banner from '../../assets/banner.svg';
 import { Link } from 'react-router-dom';
 
