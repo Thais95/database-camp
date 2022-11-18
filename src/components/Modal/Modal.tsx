@@ -28,7 +28,7 @@ export const ConfirmationModal = ({ show, idPessoa, nome, setModal }: IDeletePer
             <Modal>
                 <h3>Tem certeza que deseja deletar <span>{nome}</span>?</h3>
                 <button onClick={handleDeleteUser} > Sim, deletar </button>
-                <button onClick={handleDeleteUser} > Cancelar </button>
+                <button onClick={closeModal} > Cancelar </button>
             </Modal>
         </ModalContainer>
     )

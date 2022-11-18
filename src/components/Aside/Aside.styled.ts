@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 export const AsideStyled = styled.aside`
@@ -8,58 +7,69 @@ export const AsideStyled = styled.aside`
     height: 100vh;
     color: #fff;
     padding: 0 20px;
-
- 
-
-    .logo{
+    position: relative;
+    .logo {
+        height: 80px;
         display: flex;
-        align-items: center;
-        gap: 8px;
         justify-content: center;
-        margin-top: 24px;
-
-        img{
-            width: 48px;
-        }
-        h1{
-            color: #ffffff
-        }
-    }
-
-    hr{
-        margin: 20px 0;
-    }
-    .container{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        .user{
+        align-items: center;
+        .logoLink {
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 8px;
         }
-
-        .content{
+        img {
+            width: 40px;
+        }
+        h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #fff;
+        }
+    }
+    hr {
+        color: white;
+        margin-top: -4px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        .user {
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            user-select: none;
+            p {
+                text-transform: capitalize;
+                font-size: 1.2rem;
+                line-height: 1rem;
+                font-weight: 600;
+                color: var(--soft-blue);
+            }
+        }
+        .content {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            div{
+            gap: 30px;
+            a {
+                color: #fff;
                 display: flex;
-                gap: 10px;
                 align-items: center;
-            }
-            a{
-                color: #ffffff;
+                font-weight: 600;
+                font-size: 1.1rem;
+                gap: 10px;
+                &:hover {
+                    color: var(--light-blue);
+                }
             }
         }
     }
-
-    h2{
-        color: var(--soft-blue)
-    }
-
-    footer{
+    footer {
         position: absolute;
         bottom: 24px;
         left: 40px;
@@ -67,6 +77,5 @@ export const AsideStyled = styled.aside`
         justify-content: center;
         align-items: center;
         gap: 8px;
-    }
-
+        }
 `

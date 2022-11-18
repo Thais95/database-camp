@@ -64,10 +64,10 @@ export const Modal = styled.div`
         }
     }
     button:last-child {
-        background-color: var(--button-color);
+        background-color: var(--primary-blue);
         transition: 0.5s;
         &:hover {
-            background-color: var(--button-hover);
+            background-color: var(--light-blue);
             transition: 0.5s;
         }
     }
