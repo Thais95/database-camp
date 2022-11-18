@@ -57,7 +57,7 @@ export const InnerContainer = styled.div`
                 user-select: none;
             }
             input[type=text], input[type=password] {
-                background-color: var(--dark-blue);
+                background-color: #fff;
                 width: 380px;
                 height: 35px;
                 border-radius: 10px;

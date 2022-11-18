@@ -1,10 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 import { IPersonasContext, IChildren, IPersona } from "../utils/interfaces";
 import { api } from "../utils/api";
 import { toast } from "react-toastify";
 import { toastConfig } from "../utils/toast";
 import nProgress from "nprogress";
-import { AuthContext } from "./AuthContext";
 
 export const PersonasContext = createContext({} as IPersonasContext);
 
@@ -12,8 +11,6 @@ export const PersonasProvider = ({ children }: IChildren) => {
   const token = localStorage.getItem('token');
 
   const [ persona, setPersona ] = useState<IPersona[]>([]);
-
-
 
   const createPersona = async (persona: IPersona) => {
     try {
@@ -35,7 +32,10 @@ export const PersonasProvider = ({ children }: IChildren) => {
   const getPersonasList = async () => {
     try{
       nProgress.start();
+
+      api.defaults.headers.common['Authorization'] = token;
       const { data } = await api.get('/pessoa');
+
       setPersona(data)
     } catch (error) {
       console.error(error);
@@ -45,8 +45,25 @@ export const PersonasProvider = ({ children }: IChildren) => {
     }
   }
 
+  const deletePersona = async (idPessoa: string) => {
+    try {
+        nProgress.start();
+
+        api.defaults.headers.common['Authorization'] = token;
+        await api.delete(`/pessoa/${idPessoa}`);
+
+        toast.success('Usuário deletado com sucesso!', toastConfig);
+        getPersonasList();
+    } catch (error) {
+        toast.error('Ocorreu algum erro, tente novamente!', toastConfig);
+        console.log(error);
+    } finally {
+        nProgress.done();
+    }
+}
+
   return (
-    <PersonasContext.Provider value={{ createPersona, getPersonasList, persona }}>
+    <PersonasContext.Provider value={{ createPersona, getPersonasList, persona, deletePersona }}>
       {children}
     </PersonasContext.Provider>
   )

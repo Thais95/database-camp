@@ -20,12 +20,21 @@ export interface IPersona {
     nome: string,
     dataNascimento: string,
     cpf: string,
-    email: string
+    email: string,
+    idPessoa: number
+}
+
+export interface IDeletePersona {
+    show: boolean,
+    setModal: (idPessoa: boolean) => void,
+    idPessoa: number | null,
+    nome: string | null
 }
 
 export interface IPersonasContext {
     createPersona: (Persona: IPersona) => Promise<void>,
     getPersonasList: () => Promise<void>,
+    deletePersona: (idPessoa: string) => Promise<void>,
     persona: IPersona[]
 }
 
