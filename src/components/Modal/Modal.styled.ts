@@ -43,7 +43,7 @@ export const Modal = styled.div`
         font-weight: 600;
         margin-bottom: 30px;
         span {
-            color: var(--button-color);
+            color: var(--primary-blue);
             font-weight: 700;
         }
     }

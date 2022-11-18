@@ -36,7 +36,7 @@ export interface IPersonasContext {
     getPersonasList: () => Promise<void>,
     deletePersona: (idPessoa: string) => Promise<void>,
     editPersona: (data: IPersona ) => Promise<void>,
-    persona: IPersona[] | undefined
+    persona: IPersona[]
 }
 
 export interface IAddress {

@@ -11,7 +11,7 @@ export const PersonasContext = createContext({} as IPersonasContext);
 export const PersonasProvider = ({ children }: IChildren) => {
   const token = localStorage.getItem('token');
 
-  const [ persona, setPersona ] = useState<IPersona[]>();
+  const [ persona, setPersona ] = useState<IPersona[]>([]);
 
   const navigate = useNavigate();
 
@@ -52,15 +52,15 @@ export const PersonasProvider = ({ children }: IChildren) => {
     }
   }
 
-
-
   const editPersona = async (data: IPersona) => {
     try{
       nProgress.start()
-      console.log(data);
+      
       data.cpf = data.cpf.replace(/[^\d]/g, '');
       await api.put(`/pessoa/${data.idPessoa}`, data);
+
       toast.success("Usuário editado!", toastConfig);
+      navigate('/dashboard');
     } catch (error){
         console.error(error);
         console.log(data);
