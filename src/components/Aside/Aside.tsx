@@ -8,7 +8,7 @@ import { ReactComponent as MarcaRegistrada } from '../../assets/marca-registrada
 import { Link } from 'react-router-dom'
 
 export const Aside = () => {
-  const { user } = useContext(AuthContext)
+ const user = localStorage.getItem('user')
 
   return (
     <AsideStyled>
@@ -25,7 +25,7 @@ export const Aside = () => {
         <div className='user'>
           <i><FaUserCircle fill='#ffffff' size={50}/></i>
           user:
-          <p>{user?.login}</p>
+          <p>{user}</p>
         </div>
 
         <div className='content'>
@@ -40,13 +40,6 @@ export const Aside = () => {
             <Link to='/persona/create'>
             <FaUserPlus fill='#ffffff' size={25}/>
             Adicionar Pessoa
-            </Link>
-          </div>
-
-          <div>
-            <Link to='/dashboard'>
-              <FaSearch fill='#ffffff' size={25}/>
-              <p>Procurar Pessoa</p>
             </Link>
           </div>
         </div>

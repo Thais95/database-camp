@@ -13,7 +13,6 @@ export interface IAuthContext {
     userSignup: (newUser: IUser) => Promise<void>,
     handleLogin: (user: IUser) => Promise<void>,
     handleLogout: () => Promise<void>,
-    user: IUser | undefined
 }
 
 export interface IPersona {
