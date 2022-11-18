@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    height: 100vh;
+    height: 96vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
 `
 
@@ -10,15 +11,8 @@ export const InnerContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100% - 300px);
+    width: 100%;
     height: 100%;
-    h1 {
-        font-size: 2.2rem;
-        font-weight: 600;
-        user-select: none;
-        margin-bottom: 50px;
-        color: var(--soft-blue);
-    }
     form {
         display: flex;
         flex-direction: column;

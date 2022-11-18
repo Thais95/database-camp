@@ -9,9 +9,9 @@ import { useNavigate } from "react-router-dom";
 export const PersonasContext = createContext({} as IPersonasContext);
 
 export const PersonasProvider = ({ children }: IChildren) => {
-  const token = localStorage.getItem('token');
-
   const [ persona, setPersona ] = useState<IPersona[]>([]);
+  const [totalPages, setTotalPages] = useState(0);
+  const token = localStorage.getItem('token');
 
   const navigate = useNavigate();
 
@@ -36,17 +36,18 @@ export const PersonasProvider = ({ children }: IChildren) => {
     }
   }
 
-  const getPersonasList = async () => {
+  const getPersonasList = async (page: string) => {
     try{
       nProgress.start();
 
       api.defaults.headers.common['Authorization'] = token;
-      const { data } = await api.get('/pessoa');
+      const { data } = await api.get(`/pessoa?pagina=${parseInt(page)-1}&tamanhoDasPaginas=10`);
+      setTotalPages(data.totalPages);
 
-      setPersona(data.content)
+      setPersona(data.content);
     } catch (error) {
       console.error(error);
-      toast.error('Ocorreu algum erro, por favor tente novamente!', toastConfig)
+      toast.error('Ocorreu algum erro, por favor tente novamente!', toastConfig);
     } finally {
       nProgress.done();
     }
@@ -78,7 +79,7 @@ export const PersonasProvider = ({ children }: IChildren) => {
         await api.delete(`/pessoa/${idPessoa}`);
 
         toast.success('Usuário deletado com sucesso!', toastConfig);
-        getPersonasList();
+        getPersonasList('1');
     } catch (error) {
         toast.error('Ocorreu algum erro, tente novamente!', toastConfig);
         console.log(error);
@@ -88,7 +89,7 @@ export const PersonasProvider = ({ children }: IChildren) => {
 }
 
   return (
-    <PersonasContext.Provider value={{ createPersona, getPersonasList, persona, editPersona, deletePersona }}>
+    <PersonasContext.Provider value={{ createPersona, getPersonasList, persona, editPersona, deletePersona, totalPages }}>
       {children}
     </PersonasContext.Provider>
   )

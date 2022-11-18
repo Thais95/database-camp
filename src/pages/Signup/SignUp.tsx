@@ -33,7 +33,7 @@ export const SignUp = () => {
 
                     <div>
                         <label htmlFor="senha">Senha</label>
-                        <input type="text" id="senha" {...register("senha")} />
+                        <input type="password" id="senha" {...register("senha")} />
                         {errors.senha && <span>{errors.senha.message}</span>}
                     </div>
 

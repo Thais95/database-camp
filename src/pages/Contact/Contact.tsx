@@ -1,15 +1,17 @@
 import { Container, ContentContainer, InnerContainer } from '../../components/DashboardContainer/Container.styled';
-import { Aside } from '../../components/Aside/Aside';
 import { Header } from '../../components/Header/Header';
+import { ContactCard, ContactContent } from './Contact.styled';
 
 export const Contact = () => {
   return (
     <Container>
-      <Aside />
       <InnerContainer>
         <Header />
         <ContentContainer>
-          <h1>Contato</h1>
+          <h1>Lista de contatos cadastrados</h1>
+          <ContactContent>
+            <ContactCard />
+          </ContactContent>
         </ContentContainer>
       </InnerContainer>
     </Container>

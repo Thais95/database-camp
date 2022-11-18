@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Container, InnerContainer } from '../../components/DashboardContainer/Container.styled'
 import { ContentContainer, DashboardContent, PersonCard } from './Dashboard.styled';
-import { Aside } from '../../components/Aside/Aside';
 import { Header } from '../../components/Header/Header';
 import { IPersona } from '../../utils/interfaces';
 import { PersonasContext } from '../../context/PersonasContext';
 import { ConfirmationModal } from '../../components/Modal/Modal';
+import { PersonaPagination } from '../../components/PersonaPagination';
 
 export const Dashboard = () => {
   const { getPersonasList, persona } = useContext(PersonasContext);
@@ -15,7 +15,7 @@ export const Dashboard = () => {
   const [personName, setPersonName] = useState<string | null>(null);
 
   useEffect(() => {
-    getPersonasList()
+    getPersonasList('1')
   }, [])
 
   const navigate = useNavigate();
@@ -28,7 +28,6 @@ export const Dashboard = () => {
 
   return (
     <Container>
-      <Aside />
       <InnerContainer>
         <Header />
         <ContentContainer>
@@ -50,6 +49,7 @@ export const Dashboard = () => {
           </DashboardContent>
         </ContentContainer>
       </InnerContainer>
+      <PersonaPagination />
     </Container>
   )
 }

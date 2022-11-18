@@ -33,10 +33,11 @@ export interface IDeletePersona {
 
 export interface IPersonasContext {
     createPersona: (Persona: IPersona) => Promise<void>,
-    getPersonasList: () => Promise<void>,
+    getPersonasList: (page: string) => Promise<void>,
     deletePersona: (idPessoa: string) => Promise<void>,
     editPersona: (data: IPersona ) => Promise<void>,
-    persona: IPersona[]
+    persona: IPersona[],
+    totalPages: number
 }
 
 export interface IAddress {

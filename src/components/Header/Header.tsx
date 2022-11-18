@@ -1,10 +1,12 @@
 import { useContext } from 'react'
-import { HeaderStyled } from './Header.styled'
-import { NavLink } from 'react-router-dom'
+import { HeaderStyled, NavContainer } from './Header.styled'
+import { Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext';
+import logo from '../../assets/logo.svg'
 
 export const Header = () => {
   const { handleLogout } = useContext(AuthContext);
+  const { user } = useContext(AuthContext)
 
   let activeStyle = {
     color: '#F04E3D',
@@ -13,35 +15,47 @@ export const Header = () => {
 
   return (
     <HeaderStyled>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/dashboard"
-              style={({ isActive }) =>
-                isActive ? activeStyle : undefined
-              }>Pessoa</NavLink>
-          </li>
+      <NavContainer>
+        <div className='linkContainer'>
+          <div>
+            <div className='logo'>
+              <Link to='/dashboard' className='logoLink'>
+                <img src={logo} alt="Logo" />
+                <p>DBC</p>
+              </Link>
+            </div>
 
-          <li>
-            <NavLink to="/address"
-              style={({ isActive }) =>
-                isActive ? activeStyle : undefined
-              }>Endereço</NavLink>
-          </li>
+            <nav>
+              <ul>
+                <li>
+                  <NavLink to="/dashboard"
+                    style={({ isActive }) =>
+                      isActive ? activeStyle : undefined
+                    }>Pessoa</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/address"
+                    style={({ isActive }) =>
+                      isActive ? activeStyle : undefined
+                    }>Endereço</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contact"
+                    style={({ isActive }) =>
+                      isActive ? activeStyle : undefined
+                    }>Contato</NavLink>
+                </li>
+              </ul>
+            </nav>
+          </div>
 
-          <li>
-            <NavLink to="/contact"
-              style={({ isActive }) =>
-                isActive ? activeStyle : undefined
-              }>Contato</NavLink>
-          </li>
-        </ul>
-
-        <div>
-          <p onClick={handleLogout}>Deslogar</p>
+          <div>
+            <p className='deslogar' onClick={handleLogout}>Deslogar</p>
+          </div>
         </div>
-      </nav>
-      <div className='border'></div>
+
+        <div className='border'></div>
+      </NavContainer>
     </HeaderStyled>
   )
 }

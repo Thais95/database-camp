@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }: IChildren) => {
 
             toast.success('Usuário cadastrado com sucesso!', toastConfig);
             setUser(newUser)
-            navigate('/dashboard');
+            navigate('/');
         } catch (error) {
             toast.error('Houve algum erro, por favor tente novamente!', toastConfig);
             console.log(error);

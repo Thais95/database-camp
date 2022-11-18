@@ -5,41 +5,75 @@ export const HeaderStyled = styled.header`
     top: 0;
     position: relative;
     display: flex;
-    justify-content: center;
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: calc(100% - 300px);
-        height: 80px;
-        padding: 0 40px;
-        position: fixed;
-        ul {
-            display: flex;
-            gap: 44px;
-        }
-        a, p {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: var(--text-color);
-            transition: all ease-in-out 150ms;
-            &:hover {
-                color: var(--light-blue);
+    .logo {
+        font-family: 'Lora', serif !important;
+        a {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: white;
+            p {
+                font-family: 'Lora', serif !important;
             }
         }
-        p {
+        .logoLink {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            img {
+            width: 40px;
+            }
+        }
+    }
+    nav {
+        ul {
+            display: flex;
+            gap: 44px;        
+            a, p {
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: white;
+                transition: all ease-in-out 150ms;
+                &:hover {
+                    color: var(--light-blue);
+                }
+            }
+        }
+    }
+`
+
+export const NavContainer = styled.div`
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        background-color: var(--primary-color);
+        position: fixed;
+        .linkContainer {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 120px;
+            div {
+                display: flex;
+                align-items: center;
+                gap: 80px;
+            }
+        }
+        .deslogar {
             cursor: pointer;
-            color: var(--text-color);
+            color: white;
+            font-size: 1.2rem;
             font-weight: 500;
             transition: all ease-in-out 150ms;
             &:hover{
                 color: var(--light-blue);
                 }
         }
-    }
-    .border {
-        width: 96%;
-        border-bottom: 4px solid white;
+        .border {
+        width: 100%;
+        border-bottom: 4px solid var(--soft-blue);
+        border-radius: 20px;
         position: absolute;
         top: 76px;
         padding: 0 40px;
