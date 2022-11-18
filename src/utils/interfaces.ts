@@ -26,7 +26,7 @@ export interface IPersona {
 export interface IPersonasContext {
     createPersona: (Persona: IPersona) => Promise<void>,
     getPersonasList: () => Promise<void>,
-    persona: IPersona[]
+    persona: IPersona[] | undefined
 }
 
 export interface IAddress {

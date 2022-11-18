@@ -11,7 +11,7 @@ export const PersonasContext = createContext({} as IPersonasContext);
 export const PersonasProvider = ({ children }: IChildren) => {
   const token = localStorage.getItem('token');
 
-  const [ persona, setPersona ] = useState<IPersona[]>([]);
+  const [ persona, setPersona ] = useState<IPersona[]>();
 
 
 
@@ -36,7 +36,9 @@ export const PersonasProvider = ({ children }: IChildren) => {
     try{
       nProgress.start();
       const { data } = await api.get('/pessoa');
-      setPersona(data)
+      api.defaults.headers.common['Authorization'] = token;
+      console.log(data.content);
+      setPersona(data.content)
     } catch (error) {
       console.error(error);
       toast.error('Ocorreu algum erro, por favor tente novamente!', toastConfig)

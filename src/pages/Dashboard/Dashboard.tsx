@@ -28,7 +28,9 @@ export const Dashboard = () => {
           <p>{person.cpf}</p>
           <p>{person.dataNascimento}</p>
           <p>{person.email}</p>
+          <br />
         </div>
+       
         })}
       </>
       </InnerContainer>
