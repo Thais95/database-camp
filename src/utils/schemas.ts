@@ -27,3 +27,10 @@ export const addressFormSchema = yup.object().shape({
     estado: yup.string().required('O estado é obrigatório'),
     pais: yup.string().required('O país é obrigatório').trim()
 })
+
+export const contactFormSchema = yup.object().shape({
+    idPessoa: yup.number().required(),
+    tipoContato: yup.string().required('Selecione o tipo de contato'),
+    telefone: yup.string().required('Informe o telefone com DDD, Ex: (54)91234-1234').min(11),
+    descricao: yup.string().required('Informe uma descrição')
+})

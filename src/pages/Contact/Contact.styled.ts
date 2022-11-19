@@ -47,6 +47,7 @@ export const ContactContent = styled.div`
 export const ContactCard = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 74vw;
     height: 120px;
     background-color: white;
@@ -54,4 +55,31 @@ export const ContactCard = styled.div`
     border-radius: 10px;
     gap: 10px;
     padding: 20px;
+
+    .card-content{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    .card-buttons{
+        display: flex;
+        gap: 8px;
+
+        button{
+            background-color: var(--light-blue);
+            padding: 12px 12px;
+            border: none;
+            outline: none;
+            border-radius: 32px;
+            color: #fff;
+            font-size: 0.875rem;
+        }
+    }
 `

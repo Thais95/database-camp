@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, InnerContainer } from '../../components/DashboardContainer/Container.styled'
 import { ContentContainer, DashboardContent, PersonCard } from './Dashboard.styled';
@@ -7,6 +7,7 @@ import { IPersona } from '../../utils/interfaces';
 import { PersonasContext } from '../../context/PersonasContext';
 import { ConfirmationModal } from '../../components/Modal/Modal';
 import { PersonaPagination } from '../../components/PersonaPagination';
+import { FaUserAlt, FaEdit, FaTrashAlt } from 'react-icons/fa'
 
 export const Dashboard = () => {
   const { getPersonasList, persona } = useContext(PersonasContext);
@@ -37,12 +38,25 @@ export const Dashboard = () => {
             {Array.from(persona).map((person: IPersona) => {
               return (
                 <PersonCard key={person.idPessoa}>
-                  <p>{person.nome}</p>
-                  <p>{person.cpf}</p>
-                  <p>{person.dataNascimento}</p>
-                  <p>{person.email}</p>
-                  <button onClick={() => { handleDeleteUser(person.idPessoa, person.nome) }} >Remover</button>
-                  <button onClick={() => { navigate('/persona/edit', {state: person}) }}>Editar</button>
+
+                  <div className='card-content'>
+                    <FaUserAlt size={30} fill='#1D8E9E'/>
+
+                    <div>
+                      <p>{person.nome}</p>
+                      <p>{person.email}</p>
+                    </div>
+                    
+                    <div>
+                      <p>CPF: {person.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')}</p>
+                      <p>Nasc: {person.dataNascimento.replace(/(\d{4})-(\d{2})-(\d{2})/, '$3/$2/$1')}</p>
+                    </div>
+                  </div>
+
+                  <div className='card-buttons'>
+                    <button onClick={() => { navigate('/persona/edit', {state: person}) }}><FaTrashAlt size={16}/></button>
+                    <button onClick={() => { handleDeleteUser(person.idPessoa, person.nome) }}><FaEdit size={16}/></button>
+                  </div>
                 </PersonCard>
               )
             })}
