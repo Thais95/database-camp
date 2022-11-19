@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }: IChildren) => {
             localStorage.setItem('token', data);
 
             setUser(user);
-            navigate('/dashboard')
+            navigate('/home')
         } catch (error) {
             toast.error('Houve algum erro, por favor tente novamente!', toastConfig);
             console.log(error);
