@@ -5,7 +5,6 @@ import { IPersona } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { personaFormSchema } from '../../utils/schemas';
 import { Container, ContentContainer, InnerContainer } from './../../components/DashboardContainer/Container.styled';
-import { Aside } from '../../components/Aside/Aside';
 import InputMask from 'react-input-mask';
 import { Header } from '../../components/Header/Header';
 
@@ -17,7 +16,6 @@ export const AddPersona = () => {
 
     return (
         <Container>
-            <Aside />
             <InnerContainer>
                 <Header />
                 <ContentContainer>

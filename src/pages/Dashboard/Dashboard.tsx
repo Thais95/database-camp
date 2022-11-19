@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState  } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Container, InnerContainer } from '../../components/DashboardContainer/Container.styled'
 import { ContentContainer, DashboardContent, PersonCard } from './Dashboard.styled';
-import { Aside } from '../../components/Aside/Aside';
 import { Header } from '../../components/Header/Header';
 import { IPersona } from '../../utils/interfaces';
 import { PersonasContext } from '../../context/PersonasContext';
 import { ConfirmationModal } from '../../components/Modal/Modal';
-import { FaUserAlt } from 'react-icons/fa'
+import { PersonaPagination } from '../../components/PersonaPagination';
+import { FaUserAlt, FaEdit, FaTrashAlt } from 'react-icons/fa'
 
 export const Dashboard = () => {
   const { getPersonasList, persona } = useContext(PersonasContext);
@@ -16,7 +16,7 @@ export const Dashboard = () => {
   const [personName, setPersonName] = useState<string | null>(null);
 
   useEffect(() => {
-    getPersonasList()
+    getPersonasList('1')
   }, [])
 
   const navigate = useNavigate();
@@ -29,7 +29,6 @@ export const Dashboard = () => {
 
   return (
     <Container>
-      <Aside />
       <InnerContainer>
         <Header />
         <ContentContainer>
@@ -55,8 +54,8 @@ export const Dashboard = () => {
                   </div>
 
                   <div className='card-buttons'>
-                    <button onClick={() => { handleDeleteUser(person.idPessoa, person.nome) }}>Remover</button>
-                    <button onClick={() => { navigate('/persona/edit', {state: person}) }}>Editar</button>
+                    <button onClick={() => { navigate('/persona/edit', {state: person}) }}><FaTrashAlt size={16}/></button>
+                    <button onClick={() => { handleDeleteUser(person.idPessoa, person.nome) }}><FaEdit size={16}/></button>
                   </div>
                 </PersonCard>
               )
@@ -64,6 +63,7 @@ export const Dashboard = () => {
           </DashboardContent>
         </ContentContainer>
       </InnerContainer>
+      <PersonaPagination />
     </Container>
   )
 }

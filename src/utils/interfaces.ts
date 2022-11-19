@@ -9,10 +9,23 @@ export interface IChildren {
     children?: React.ReactNode
 }
 
+// AUTHENTICATION INTERFACE
+
 export interface IAuthContext {
     userSignup: (newUser: IUser) => Promise<void>,
     handleLogin: (user: IUser) => Promise<void>,
     handleLogout: () => Promise<void>,
+}
+
+// PERSONA INTERFACE
+
+export interface IPersonasContext {
+    createPersona: (Persona: IPersona) => Promise<void>,
+    getPersonasList: (page: string) => Promise<void>,
+    deletePersona: (idPessoa: string) => Promise<void>,
+    editPersona: (data: IPersona ) => Promise<void>,
+    persona: IPersona[],
+    totalPages: number
 }
 
 export interface IPersona {
@@ -30,13 +43,7 @@ export interface IDeletePersona {
     nome: string | null
 }
 
-export interface IPersonasContext {
-    createPersona: (Persona: IPersona) => Promise<void>,
-    getPersonasList: () => Promise<void>,
-    deletePersona: (idPessoa: string) => Promise<void>,
-    editPersona: (data: IPersona ) => Promise<void>,
-    persona: IPersona[]
-}
+// ADDRESS INTERFACE
 
 export interface IAddress {
     cep: string,
@@ -52,4 +59,22 @@ export interface IAddress {
 export interface IAddressContext {
     getAddressByCep: (cep: string) => Promise<void>,
     addressFromApi: Record<string, string>
+}
+
+// CONTACTS INTERFACES
+
+export interface IContactContext {
+    getContactList: () => Promise<void>,
+    deleteContact: (idContact: number) => Promise<void>,
+    editContact: (data: IContacts) => Promise<void>,
+    contacts: IContacts[],
+    totalPages: number
+}
+
+export interface IContacts {
+    idPessoa: number
+    tipoContato: string,
+    telefone: string,
+    descricao: string,
+    idContato: number
 }

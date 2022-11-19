@@ -6,8 +6,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { personaFormSchema } from '../../utils/schemas';
 import { Container, InnerContainer } from './EditPerson.styled';
 import InputMask from 'react-input-mask';
-import { Aside } from '../../components/Aside/Aside';
 import { useLocation } from 'react-router-dom';
+import { Header } from '../../components/Header/Header';
 
 export const EditPerson = () => {
 
@@ -21,7 +21,7 @@ export const EditPerson = () => {
 
     return (
         <Container>
-            <Aside />
+            <Header />
             <InnerContainer>
                 <form onSubmit={handleSubmit((data: IPersona) => editPersona(data))}>
                     <div>

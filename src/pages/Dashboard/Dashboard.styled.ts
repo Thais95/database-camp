@@ -6,7 +6,6 @@ export const ContentContainer = styled.div`
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding: 0 40px;
     ::-webkit-scrollbar {
         width: 14px;
         margin-top: 80px;
@@ -24,10 +23,11 @@ export const ContentContainer = styled.div`
     h1 {
         display: flex;
         align-items: center;
-        height: 80px;
-        width: 80%;
-        margin-left: -30px;
-        padding-left: 30px;
+        height: 100px;
+        font-weight: 600;
+        width: 90%;
+        padding-top: 40px;
+        padding-left: 220px;
         font-size: 1.8rem;
         color: var(--text-color);
         position: fixed;
@@ -36,7 +36,7 @@ export const ContentContainer = styled.div`
 `
 
 export const DashboardContent = styled.div`
-    margin-top: 100px;
+    margin-top: 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,8 +48,8 @@ export const PersonCard = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 78vw;
-    height: 100px;
+    width: 74vw;
+    height: 120px;
     background-color: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
