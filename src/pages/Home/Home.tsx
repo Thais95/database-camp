@@ -1,6 +1,6 @@
-import { Container, ContentContainer, InnerContainer } from '../../components/MainContainer/Container.styled';
+import { Container, InnerContainer } from '../../components/MainContainer/Container.styled';
 import { Header } from '../../components/Header/Header';
-import { HomeCard, HomeContent } from './Home.styled';
+import { ContentContainer } from './Home.styled';
 
 export const Home = () => {
   return (
@@ -9,9 +9,6 @@ export const Home = () => {
         <Header />
         <ContentContainer>
           <h1>Página inicial</h1>
-          <HomeContent>
-            <HomeCard />
-          </HomeContent>
         </ContentContainer>
       </InnerContainer>
     </Container>

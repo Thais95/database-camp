@@ -30,7 +30,7 @@ export const Contact = () => {
       <InnerContainer>
         <Header />
         <ContentContainer>
-          <h1>Lista de contatos cadastrados</h1>
+          <h1>Contatos cadastrados</h1>
           <ContactContent>
             <ConfirmationModal show={modal} idContato={id} setModal={setModal} telefone={tel} />
             {Array.from(contacts).map((contact: IContacts) => {

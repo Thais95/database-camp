@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const ContentContainer = styled.div`
-    margin-top: 80px;
-    height: 100%;
+    height: 92vh;
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -22,36 +21,17 @@ export const ContentContainer = styled.div`
     }
     h1 {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         height: 100px;
         font-weight: 600;
         width: 90%;
-        padding-top: 40px;
+        padding-bottom: 10px;
         padding-left: 220px;
         font-size: 1.8rem;
+        text-shadow: 2px 2px 2px #ccc;
         color: var(--text-color);
         position: fixed;
         background-color: var(--background-color);
+        user-select: none;
     }
-`
-
-export const HomeContent = styled.div`
-    margin-top: 140px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding-bottom: 40px;
-`
-
-export const HomeCard = styled.div`
-    display: flex;
-    align-items: center;
-    width: 74vw;
-    height: 120px;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    gap: 10px;
-    padding: 20px;
 `

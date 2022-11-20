@@ -18,7 +18,7 @@ export const Header = () => {
       <div className='linkContainer'>
         <div>
           <div className='logo'>
-            <Link to='/dashboard' className='logoLink'>
+            <Link to='/home' className='logoLink'>
               <img src={logo} alt="Logo" />
               <p>DBC</p>
             </Link>

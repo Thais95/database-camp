@@ -22,12 +22,14 @@ export const ContentContainer = styled.div`
     h1 {
         display: flex;
         align-items: flex-end;
+        justify-content: center;
         height: 100px;
         font-weight: 600;
         width: 90%;
         padding-bottom: 10px;
         padding-left: 220px;
         font-size: 1.8rem;
+        text-shadow: 2px 2px 2px #ccc;
         color: var(--text-color);
         position: fixed;
         background-color: var(--background-color);
@@ -59,10 +61,11 @@ export const ContactCard = styled.div`
         display: flex;
         align-items: center;
         gap: 40px;
+        font-size: 1.1rem;
         div{
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 20px;
             span {
                 font-weight: 600;
                 font-size: 0.9rem;

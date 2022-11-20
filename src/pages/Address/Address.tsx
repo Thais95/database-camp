@@ -13,7 +13,7 @@ export const Address = () => {
 
   useEffect(() => {
     getAddressList('1');
-    console.log('chegou aqui');
+    console.log(getAddressList('1'));
   }, [])
 
   return (
@@ -21,7 +21,7 @@ export const Address = () => {
       <InnerContainer>
         <Header />
         <ContentContainer>
-          <h1>Lista de endereços cadastrados</h1>
+          <h1>Endereços cadastrados</h1>
           <AddressContent>
             {Array.from(address).map((endereco: IAddress) => {
               return (

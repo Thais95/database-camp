@@ -32,7 +32,7 @@ export const Dashboard = () => {
       <InnerContainer>
         <Header />
         <ContentContainer>
-          <h1>Lista de pessoas cadastradas</h1>
+          <h1>Pessoas cadastradas</h1>
           <DashboardContent>
             <ConfirmationModal show={modal} idPessoa={id} setModal={setModal} nome={personName} />
             {Array.from(persona).map((person: IPersona) => {
