@@ -5,6 +5,7 @@ export const ContentContainer = styled.div`
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
+
     ::-webkit-scrollbar {
         width: 14px;
         margin-top: 80px;
@@ -19,6 +20,33 @@ export const ContentContainer = styled.div`
         border: solid 2px transparent;
         border-radius: 15px;
     }
+
+    .add-btn{
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        
+        a{
+            button{
+            background-color: var(--dark-blue);
+            color: #ffffff;
+            width: 320px;
+            height: 48px;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all ease-in-out 200ms;
+            cursor: pointer;
+            }
+
+            button:hover{
+                background-color: var(--light-blue);
+            }   
+        }
+    }
+
     h1 {
         width: 100%;
         margin-top: 50px;

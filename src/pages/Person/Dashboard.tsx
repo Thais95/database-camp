@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState  } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Container, InnerContainer } from '../../components/MainContainer/Container.styled'
 import { ContentContainer, DashboardContent, PersonCard } from './Dashboard.styled';
 import { Header } from '../../components/Header/Header';
@@ -33,6 +33,9 @@ export const Dashboard = () => {
         <Header />
         <ContentContainer>
           <h1>Pessoas cadastradas</h1>
+          <div className='add-btn'>
+            <Link to={'/person/create'}><button>Adicionar Pessoa</button></Link>
+          </div>
           <DashboardContent>
             <ConfirmationModal show={modal} idPessoa={id} setModal={setModal} nome={personName} />
             {Array.from(persona).map((person: IPersona) => {
