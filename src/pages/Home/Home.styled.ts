@@ -3,7 +3,10 @@ import styled from 'styled-components';
 export const ContentContainer = styled.div`
     height: 92vh;
     width: 100%;
-    overflow-y: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: auto;
     overflow-x: hidden;
     background-color: var(--primary-color);
     ::-webkit-scrollbar {
@@ -24,10 +27,14 @@ export const ContentContainer = styled.div`
         display: flex;
         align-items: flex-end;
         font-weight: 700;
-        padding-bottom: 10px;
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-family: 'Lora', serif !important;
         color: var(--detail-color);
+        text-transform: uppercase;
         user-select: none;
+    }
+    img {
+        height: 90%;
+        -webkit-user-drag: none;
     }
 `
