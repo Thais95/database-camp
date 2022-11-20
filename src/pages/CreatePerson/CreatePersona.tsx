@@ -4,7 +4,7 @@ import { PersonasContext } from '../../context/PersonasContext';
 import { IPersona } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { personaFormSchema } from '../../utils/schemas';
-import { Container, ContentContainer, InnerContainer } from './../../components/DashboardContainer/Container.styled';
+import { Container, ContentContainer, InnerContainer } from '../../components/MainContainer/Container.styled';
 import { Header } from '../../components/Header/Header';
 import InputMask from 'react-input-mask';
 

@@ -6,7 +6,6 @@ export const HeaderStyled = styled.header`
     position: relative;
     display: flex;
     .logo {
-        font-family: 'Lora', serif !important;
         a {
             font-size: 1.8rem;
             font-weight: 600;
@@ -53,12 +52,15 @@ export const NavContainer = styled.div`
             display: flex;
             width: 100%;
             justify-content: space-between;
-            padding: 0 120px;
+            padding: 0 220px;
             div {
                 display: flex;
                 align-items: center;
                 gap: 80px;
             }
+        }
+        .user {
+            color: white;
         }
         .deslogar {
             cursor: pointer;
@@ -72,7 +74,7 @@ export const NavContainer = styled.div`
         }
         .border {
         width: 100%;
-        border-bottom: 4px solid var(--soft-blue);
+        border-bottom: 4px solid white;
         border-radius: 20px;
         position: absolute;
         top: 76px;

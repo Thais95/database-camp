@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState  } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, InnerContainer } from '../../components/DashboardContainer/Container.styled'
+import { Container, InnerContainer } from '../../components/MainContainer/Container.styled'
 import { ContentContainer, DashboardContent, PersonCard } from './Dashboard.styled';
 import { Header } from '../../components/Header/Header';
 import { IPersona } from '../../utils/interfaces';

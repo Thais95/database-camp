@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, InnerContainer } from '../../components/DashboardContainer/Container.styled';
+import { Container, InnerContainer } from '../../components/MainContainer/Container.styled';
 import { Header } from '../../components/Header/Header';
 import { ContentContainer, AddressCard, AddressContent } from './Address.styled';
 import { AddressContext } from '../../context/AddressContext';

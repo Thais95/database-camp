@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Container, InnerContainer } from '../../components/DashboardContainer/Container.styled';
+import { Container, InnerContainer } from '../../components/MainContainer/Container.styled';
 import { Header } from '../../components/Header/Header';
 import { ContentContainer, ContactCard, ContactContent } from './Contact.styled';
 import { ContactContext } from '../../context/ContactContext';
@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { ConfirmationModal } from '../../components/ModalContact/Modal';
 
 export const Contact = () => {
-  const { getContactList, contacts, deleteContact } = useContext(ContactContext);
+  const { getContactList, contacts } = useContext(ContactContext);
   const [modal, setModal] = useState<boolean>(false);
   const [id, setId] = useState<number | null>(null);
   const [tel, setTel] = useState<string | null>(null);

@@ -6,7 +6,7 @@ import logo from '../../assets/logo.svg'
 
 export const Header = () => {
   const { handleLogout } = useContext(AuthContext);
-  const user = localStorage.getItem('user')
+  const user = localStorage.getItem('user');
 
   let activeStyle = {
     color: '#f77a6c',
@@ -56,8 +56,8 @@ export const Header = () => {
           </div>
 
           <div>
+            <p className='user'>{user}</p>
             <p className='deslogar' onClick={handleLogout}>Deslogar</p>
-            <p>{user}</p>
           </div>
         </div>
 

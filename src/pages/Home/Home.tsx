@@ -1,4 +1,4 @@
-import { Container, ContentContainer, InnerContainer } from '../../components/DashboardContainer/Container.styled';
+import { Container, ContentContainer, InnerContainer } from '../../components/MainContainer/Container.styled';
 import { Header } from '../../components/Header/Header';
 import { HomeCard, HomeContent } from './Home.styled';
 
