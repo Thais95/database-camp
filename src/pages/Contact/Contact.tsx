@@ -40,8 +40,8 @@ export const Contact = () => {
 
                 </div>
                 <div className='card-buttons'>
-                  <button onClick={() => { navigate('/contact/edit', { state: contact }) }}><FaEdit size={16} /></button>
-                  <button onClick={() => { deleteContact(contact.idContato) }}><FaTrashAlt size={16} /></button>
+                  <button title='Editar' onClick={() => { navigate('/contact/edit', { state: contact }) }}><FaEdit size={16} /></button>
+                  <button title='Remover' onClick={() => { deleteContact(contact.idContato) }}><FaTrashAlt size={16} /></button>
                 </div>
               </ContactCard>
               )

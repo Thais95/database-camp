@@ -54,8 +54,8 @@ export const Dashboard = () => {
                   </div>
 
                   <div className='card-buttons'>
-                    <button onClick={() => { navigate('/persona/edit', {state: person}) }}><FaTrashAlt size={16}/></button>
-                    <button onClick={() => { handleDeleteUser(person.idPessoa, person.nome) }}><FaEdit size={16}/></button>
+                    <button title='Editar' onClick={() => { navigate('/persona/edit', {state: person}) }}><FaEdit size={16}/></button>
+                    <button title='Remover' onClick={() => { handleDeleteUser(person.idPessoa, person.nome) }}><FaTrashAlt size={16}/></button>
                   </div>
                 </PersonCard>
               )

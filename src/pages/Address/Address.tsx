@@ -56,8 +56,8 @@ export const Address = () => {
 
                   </div>
                   <div className='card-buttons'>
-                    <button onClick={() => { navigate('/address/edit', { state: endereco }) }}><FaEdit size={16} /></button>
-                    <button onClick={() => { deleteAddress(endereco.idEndereco) }}><FaTrashAlt size={16} /></button>
+                    <button title='Editar' onClick={() => { navigate('/address/edit', { state: endereco }) }}><FaEdit size={16} /></button>
+                    <button title='Remover' onClick={() => { deleteAddress(endereco.idEndereco) }}><FaTrashAlt size={16} /></button>
                   </div>
                 </AddressCard>
               )

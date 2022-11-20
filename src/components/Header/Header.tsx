@@ -9,7 +9,7 @@ export const Header = () => {
   const user = localStorage.getItem('user')
 
   let activeStyle = {
-    color: '#F04E3D',
+    color: '#f77a6c',
     fontWeight: 700
   };
 
