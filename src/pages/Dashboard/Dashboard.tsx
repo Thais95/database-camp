@@ -43,13 +43,13 @@ export const Dashboard = () => {
                     <FaUserAlt size={30} fill='#1D8E9E'/>
 
                     <div>
-                      <p>{person.nome}</p>
-                      <p>{person.email}</p>
+                      <p><span>Nome:</span> {person.nome}</p>
+                      <p><span>Email:</span> {person.email}</p>
                     </div>
                     
                     <div>
-                      <p>CPF: {person.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')}</p>
-                      <p>Nasc: {person.dataNascimento.replace(/(\d{4})-(\d{2})-(\d{2})/, '$3/$2/$1')}</p>
+                      <p><span>CPF:</span> {person.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')}</p>
+                      <p><span>Data de Nasc.:</span> {person.dataNascimento.replace(/(\d{4})-(\d{2})-(\d{2})/, '$3/$2/$1')}</p>
                     </div>
                   </div>
 

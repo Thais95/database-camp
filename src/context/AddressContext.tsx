@@ -49,6 +49,24 @@ export const AddressProvider = ({ children }: IChildren) => {
         }
     }
 
+    const editAddress = async (data: IAddress) => {
+        try {
+            nProgress.start();
+
+            api.defaults.headers.common['Authorization'] = token;
+            await api.put(`/endereco/${data.idEndereco}`, data);
+
+            toast.success("Endereço editado com sucesso!", toastConfig);
+            navigate('/address');
+        } catch (error) {
+            console.error(error);
+            console.log(data);
+            toast.error("Ocorreu algum erro, tente novamente!", toastConfig);
+        } finally {
+            nProgress.done();
+        }
+    }
+
     const deleteAddress = async (idAddress: number) => {
         try {
             nProgress.start();
@@ -65,24 +83,6 @@ export const AddressProvider = ({ children }: IChildren) => {
             nProgress.done();
         }
     }
-
-    const editAddress = async (data: IAddress) => {
-        try {
-            nProgress.start();
-
-            api.defaults.headers.common['Authorization'] = token;
-            await api.put(`/endereco/${data.idEndereco}`, data);
-
-            toast.success("Endereço editado com sucesso!", toastConfig);
-            navigate('/address');
-        } catch (error) {
-            console.error(error);
-            console.log(data);
-            toast.error("Ocorreu algum erro, tente novamente!", toastConfig);
-        } finally {
-            nProgress.done();
-        };
-    };
 
     return (
         <AddressContext.Provider value={{ getAddressByCep, addressFromApi, getAddressList, address, deleteAddress, editAddress, totalPages }}>

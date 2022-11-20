@@ -32,6 +32,7 @@ export const ContentContainer = styled.div`
         color: var(--text-color);
         position: fixed;
         background-color: var(--background-color);
+        user-select: none;
     }
 `
 
@@ -63,19 +64,37 @@ export const ContactCard = styled.div`
             display: flex;
             flex-direction: column;
             gap: 10px;
+            span {
+                font-weight: 600;
+                font-size: 0.9rem;
+                color: var(--primary-blue);
+                user-select: none;
+            }
         }
     }
     .card-buttons{
         display: flex;
-        gap: 8px;
-        button{
+        gap: 14px;
+        button {
             background-color: var(--light-blue);
-            padding: 12px 12px;
+            padding: 10px 10px;
             border: none;
             outline: none;
             border-radius: 32px;
             color: #fff;
             font-size: 0.875rem;
+            transition: 0.6s;
+            cursor: pointer;
+            &:first-child:hover {
+                transition: 0.6s;
+                transform: scale(1.1);
+                background-color: #0d6efd;
+            }
+            &:last-child:hover {
+                transition: 0.6s;
+                transform: scale(1.1);
+                background-color: #ff0000;
+            }
         }
     }
 `
