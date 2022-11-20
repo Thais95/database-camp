@@ -30,7 +30,7 @@ export const EditAddress = () => {
                             <div>
                                 <label htmlFor="cep">CEP:</label>
                                 <InputMask mask="99999-999" type="text" id="cep" {...register("cep")} defaultValue={state.cep} />
-                                {errors.cep && <p>{errors.cep.message}</p>}
+                                {errors.cep && <span>{errors.cep.message}</span>}
                             </div>
 
                             <div>
@@ -39,43 +39,43 @@ export const EditAddress = () => {
                                     <option value="COMERCIAL">Comercial</option>
                                     <option value="RESIDENCIAL">Residencial</option>
                                 </select>
-                                {errors.tipo && <p>{errors.tipo.message}</p>}
+                                {errors.tipo && <span>{errors.tipo.message}</span>}
                             </div>
 
                             <div>
                                 <label htmlFor="pais">País:</label>
                                 <input type="text" id="pais" {...register("pais")} defaultValue={state.pais} />
-                                {errors.pais && <p>{errors.pais.message}</p>}
+                                {errors.pais && <span>{errors.pais.message}</span>}
                             </div>
 
                             <div>
                                 <label htmlFor="estado">Estado:</label>
                                 <input type="text" id="estado" {...register("estado")} defaultValue={state.estado} />
-                                {errors.estado && <p>{errors.estado.message}</p>}
+                                {errors.estado && <span>{errors.estado.message}</span>}
                             </div>
 
                             <div>
                                 <label htmlFor="cidade">Cidade:</label>
                                 <input type="text" id="cidade" {...register("cidade")} defaultValue={state.cidade} />
-                                {errors.cidade && <p>{errors.cidade.message}</p>}
+                                {errors.cidade && <span>{errors.cidade.message}</span>}
                             </div>
 
                             <div>
                                 <label htmlFor="logradouro">Logradouro:</label>
                                 <input type="text" id="logradouro" {...register("logradouro")} defaultValue={state.logradouro} />
-                                {errors.logradouro && <p>{errors.logradouro.message}</p>}
+                                {errors.logradouro && <span>{errors.logradouro.message}</span>}
                             </div>
 
                             <div>
                                 <label htmlFor="numero">Número:</label>
                                 <input type="text" id="numero" {...register("numero")} defaultValue={state.numero} />
-                                {errors.numero && <p>{errors.numero.message}</p>}
+                                {errors.numero && <span>{errors.numero.message}</span>}
                             </div>
 
                             <div>
                                 <label htmlFor="complemento">Complemento:</label>
                                 <input type="text" id="complemento" {...register("complemento")} defaultValue={state.complemento} />
-                                {errors.complemento && <p>{errors.complemento.message}</p>}
+                                {errors.complemento && <span>{errors.complemento.message}</span>}
                             </div>
 
                             <div style={{ display: 'none' }}>

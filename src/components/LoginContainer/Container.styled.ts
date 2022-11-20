@@ -6,15 +6,31 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow-y: auto;
+    overflow-x: hidden;
+    ::-webkit-scrollbar {
+        width: 14px;
+        margin-top: 80px;
+    }
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 10px 10px #ccc;
+        border: solid 2px transparent;
+        border-radius: 15px;
+    }
+    ::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 10px 10px var(--primary-color);
+        border: solid 2px transparent;
+        border-radius: 15px;
+    }
 `
 
 export const BannerContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
     height: 100vh;
     width: 50%;
-    overflow: hidden;
     background-color: var(--primary-color);
     img {
         width: 90%;
@@ -30,16 +46,21 @@ export const InnerContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: 50%;
+    min-height: 100vh;
     height: 100%;
     gap: 20px;
+    @media screen and (max-width: 1600px) {
+        gap: 0;
+    }
     h1 {
         font-size: 1.45rem;
         font-weight: 700;
         user-select: none;
         margin-bottom: 28px;
         color: var(--primary-color);
-        @media screen and (max-width: 1400px) {
+        @media screen and (max-width: 1600px) {
             margin-bottom: 16px;
+            font-size: 1.3rem;
         }
     }
     h2 {
@@ -49,17 +70,21 @@ export const InnerContainer = styled.div`
         margin-bottom: 74px;
         color: var(--detail-color);
         font-family: 'Lora', serif;
-        @media screen and (max-width: 1400px) {
+        @media screen and (max-width: 1600px) {
             margin-bottom: 32px;
+            font-size: 3.1rem;
         }
     }
     form {
         display: flex;
         flex-direction: column;
-        gap: 42px;
+        gap: 35px;
         align-items: center;
         justify-content: center;
         color: var(--detail-secondary-color);
+        @media screen and (max-width: 1600px) {
+            margin-bottom: 16px;
+        }
         div {
             display: flex;
             flex-direction: column;
@@ -72,7 +97,7 @@ export const InnerContainer = styled.div`
                 user-select: none;
             }
             span {
-                bottom: -30px;
+                bottom: -25px;
                 margin-left: 15px;
                 font-size: 0.95rem;
                 font-weight: 700;
@@ -86,7 +111,7 @@ export const InnerContainer = styled.div`
                 height: 45px;
                 border-radius: 10px;
                 font-size: 1.1rem;
-                padding: 22px 15px;
+                padding: 0 15px;
                 border: 2px solid rgba(111, 196, 201, 0.3);
                 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
                 border-radius: 10px;
@@ -115,8 +140,8 @@ export const InnerContainer = styled.div`
                 border-radius: 10px;
                 color: white;
                 transition: 0.5s;
-                @media screen and (max-width: 1400px) {
-                    margin-top: 16px;
+                @media screen and (max-width: 1600px) {
+                    margin-top: 12px;
                 }
                 &:hover {
                     transition: 0.5s;
@@ -136,6 +161,9 @@ export const InnerContainer = styled.div`
         gap: 8px;
         user-select: none;
         text-align: center;
+        @media screen and (max-width: 1600px) {
+            margin-top: 10px;
+        }
         a {
             color: var(--detail-color);
             font-weight: 600;

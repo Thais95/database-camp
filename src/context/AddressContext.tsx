@@ -88,18 +88,16 @@ export const AddressProvider = ({ children }: IChildren) => {
     const createAddress = async (data: IAddress) => {
         try {
             nProgress.start();
+            data.cep = data.cep.replace(/[^\d]/g, '');
 
             api.defaults.headers.common['Authorization'] = token;
-            console.log(data);
 
-            data.numero = Number(data.numero)
-            data.idPessoa = Number(data.idPessoa)
-            console.log(data);
-
+            data.numero = Number(data.numero);
+            data.idPessoa = Number(data.idPessoa);
 
             await api.post(`/endereco/${data.idPessoa}`, data);
 
-            toast.success('Endereco cadastrada com sucesso!', toastConfig);
+            toast.success('Endereço adicionado com sucesso!', toastConfig);
             navigate('/people');
         } catch (error){
             console.error(error);
@@ -108,8 +106,6 @@ export const AddressProvider = ({ children }: IChildren) => {
             nProgress.done();
         }
     }
-
-
 
     return (
         <AddressContext.Provider value={{ getAddressByCep, addressFromApi, getAddressList, address, deleteAddress, editAddress, totalPages, createAddress }}>

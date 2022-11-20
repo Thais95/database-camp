@@ -48,6 +48,12 @@ export const AddressContent = styled.div`
             display: flex;
             flex-direction: column;
             gap: 6px;
+            span {
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: #ff0000;
+                user-select: none;
+            }
             label {
                 font-size: 0.9rem;
                 font-weight: 600;

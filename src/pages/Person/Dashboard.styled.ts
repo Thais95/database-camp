@@ -24,8 +24,7 @@ export const ContentContainer = styled.div`
     .add-btn{
         display: flex;
         justify-content: center;
-        margin-top: 40px;
-        
+        margin-top: 40px;        
         a{
             button{
             background-color: var(--dark-blue);
@@ -37,11 +36,11 @@ export const ContentContainer = styled.div`
             border-radius: 12px;
             font-size: 1rem;
             font-weight: 600;
-            transition: all ease-in-out 200ms;
             cursor: pointer;
+            transition: 0.5s;
             }
-
             button:hover{
+                transition: 0.5s;
                 background-color: var(--light-blue);
             }   
         }

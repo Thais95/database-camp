@@ -33,19 +33,19 @@ export const CreateContact = () => {
                                 <option value="RESIDENCIAL">Residencial</option>
                                 <option value="COMERCIAL">Comercial</option>
                             </select>
-                            {errors.tipoContato && <p>{errors.tipoContato.message}</p>}
+                            {errors.tipoContato && <span>{errors.tipoContato.message}</span>}
                         </div>
 
                         <div>
                             <label htmlFor="telefone">Telefone</label>                        
                             <InputMask mask="(99)99999-9999" type="text" id="telefone" {...register("telefone")}/>
-                            {errors.telefone && <p>{errors.telefone.message}</p>}
+                            {errors.telefone && <span>{errors.telefone.message}</span>}
                         </div>
 
                         <div>
                             <label htmlFor="descricao">Descrição</label>
                             <input type="text" id="descricao" {...register("descricao")}/>
-                            {errors.descricao && <p>{errors.descricao.message}</p>}
+                            {errors.descricao && <span>{errors.descricao.message}</span>}
                         </div>
 
                         <div style={{display: 'none'}}>
@@ -55,7 +55,7 @@ export const CreateContact = () => {
                         <div>
                             <input type="submit" value="Adicionar" />
 
-                                <input type="button" value="Cancelar" onClick={() => (navigate('/people'))} />
+                            <input type="button" value="Cancelar" onClick={() => (navigate('/people'))} />
                         </div>
                     </form>
                     </ContactContent>

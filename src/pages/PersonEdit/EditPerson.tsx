@@ -29,25 +29,25 @@ export const EditPerson = () => {
                             <div>
                                 <label htmlFor="nome">Nome</label>
                                 <input type="text" id="nome" {...register("nome")} defaultValue={state.nome} />
-                                {errors.nome && <p>{errors.nome.message}</p>}
+                                {errors.nome && <span>{errors.nome.message}</span>}
                             </div>
 
                             <div>
                                 <label htmlFor="dataNascimento">Data de nascimento</label>
                                 <input type="date" id="dataNascimento" {...register("dataNascimento")} defaultValue={state.dataNascimento} />
-                                {errors.dataNascimento && <p>{errors.dataNascimento.message}</p>}
+                                {errors.dataNascimento && <span>{errors.dataNascimento.message}</span>}
                             </div>
 
                             <div>
                                 <label htmlFor="cpf">CPF</label>
                                 <InputMask mask="999.999.999-99" type="text" id="cpf" {...register("cpf")} defaultValue={state.cpf} disabled />
-                                {errors.cpf && <p>{errors.cpf.message}</p>}
+                                {errors.cpf && <span>{errors.cpf.message}</span>}
                             </div>
 
                             <div>
                                 <label htmlFor="email">Email</label>
                                 <input type="text" id="email" {...register("email")} defaultValue={state.email} />
-                                {errors.email && <p>{errors.email.message}</p>}
+                                {errors.email && <span>{errors.email.message}</span>}
                             </div>
 
                             <div style={{display: 'none'}}>
