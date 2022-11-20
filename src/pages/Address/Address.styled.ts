@@ -24,12 +24,12 @@ export const ContentContainer = styled.div`
         align-items: flex-end;
         justify-content: center;
         height: 100px;
-        font-weight: 600;
+        font-weight: 700;
         width: 90%;
         padding-bottom: 10px;
         padding-left: 220px;
-        font-size: 1.8rem;
-        text-shadow: 2px 2px 2px #ccc;
+        font-size: 2rem;
+        font-family: 'Lora', serif !important;
         color: var(--text-color);
         position: fixed;
         background-color: var(--background-color);
