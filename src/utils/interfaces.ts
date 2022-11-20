@@ -2,7 +2,8 @@ import React from 'react';
 
 export interface IUser {
     login: string,
-    senha: string
+    senha: string,
+    confirmacao?: string
 }
 
 export interface IChildren {

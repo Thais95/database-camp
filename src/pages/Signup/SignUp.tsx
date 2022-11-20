@@ -36,6 +36,11 @@ export const SignUp = () => {
                         <input type="password" id="senha" {...register("senha")} />
                         {errors.senha && <span>{errors.senha.message}</span>}
                     </div>
+                    <div>
+                        <label htmlFor="confirmacao">Confirme a sua senha</label>
+                        <input type="password" id='confirmacao'/>
+                        {errors.confirmacao && <span>{errors.confirmacao.message}</span>}
+                    </div>
 
                     <div>
                         <input type="submit" value="Cadastrar" />

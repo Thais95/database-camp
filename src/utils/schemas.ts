@@ -7,7 +7,8 @@ export const userFormSchema = yup.object().shape({
 
 export const userSignupFormSchema = yup.object().shape({
     login: yup.string().required('Campo login é obrigatório').min(2, 'O login deve ter no mínimo 2 caracteres').trim(),
-    senha: yup.string().required('Campo senha é obrigatório').min(3, 'A senha deve ter no mínimo 3 caracteres').trim()
+    senha: yup.string().required('Campo senha é obrigatório').min(3, 'A senha deve ter no mínimo 3 caracteres').trim(),
+    confirmacao: yup.string().required('Campo confirmar a senha é obrigatório').min(3, 'A senha deve ter no mínimo 3 caracteres').trim().oneOf([yup.ref('senha'), null], 'As senhas não são iguais')
 })
 
 export const personaFormSchema = yup.object().shape({

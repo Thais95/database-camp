@@ -48,7 +48,6 @@ export const PersonaPagination = () => {
                 <Link style={{color: 'var(--detail-color)'}} to ={`/people?page=${pageNumber}`}>{pageNumber}</Link>
                 <FaChevronRight fill='#ffffff'/>
             </>): 
-            
             (<>
                 <Link to ={`/people?page=${Number(pageNumber) - 1}`}><FaChevronLeft fill='#ffffff'/></Link>
                 <Link to ={`/people?page=1`}>1</Link>
