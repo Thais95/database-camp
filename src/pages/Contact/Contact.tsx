@@ -40,7 +40,7 @@ export const Contact = () => {
                   <FaPhoneAlt size={30} fill='#1D8E9E' />
 
                   <div>
-                    <p><span>Tel:</span> {contact?.telefone}</p>
+                    <p><span>Tel:</span> {contact?.telefone.replace(/(\d{2})(\d{5})(\d{4})/, '($1)$2-$3')}</p>
                     <p><span>Tipo:</span> {contact?.tipoContato.toLowerCase()}</p>
                   </div>
 

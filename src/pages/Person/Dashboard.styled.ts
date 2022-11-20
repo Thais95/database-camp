@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ContentContainer = styled.div`
     height: 88vh;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 
     ::-webkit-scrollbar {
@@ -24,8 +24,7 @@ export const ContentContainer = styled.div`
     .add-btn{
         display: flex;
         justify-content: center;
-        margin-top: 40px;
-        
+        margin-top: 40px;        
         a{
             button{
             background-color: var(--dark-blue);
@@ -37,11 +36,11 @@ export const ContentContainer = styled.div`
             border-radius: 12px;
             font-size: 1rem;
             font-weight: 600;
-            transition: all ease-in-out 200ms;
             cursor: pointer;
+            transition: 0.5s;
             }
-
             button:hover{
+                transition: 0.5s;
                 background-color: var(--light-blue);
             }   
         }
@@ -83,6 +82,16 @@ export const PersonCard = styled.div`
     padding: 20px;
     transition: 1s;
     border: 2px solid var(--background-color);
+    @media screen and (max-width: 1600px) {
+        max-width: 74vw;
+        height: 140px;
+    }
+    @media screen and (max-width: 1199px) {
+        max-width: 74vw;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+    }
     &:hover {
         transition: 1s;
         transform: scale(1.02);
@@ -92,11 +101,18 @@ export const PersonCard = styled.div`
         align-items: center;
         gap: 40px;
         font-size: 0.9rem;
+        .smallBox {
+            width: 200px;
+        }
         div{
             display: flex;
             flex-direction: column;
             width: 340px;
             gap: 24px;
+            @media screen and (max-width: 1600px) {
+                width: 300px;
+                gap: 30px;
+            }
             span {
                 font-weight: 600;
                 font-size: 0.9rem;

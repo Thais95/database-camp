@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContentContainer = styled.div`
-    height: 88vh;
+    height: 92vh;
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
@@ -20,25 +20,21 @@ export const ContentContainer = styled.div`
         border-radius: 15px;
     }
     h1 {
+        width: 100%;
+        margin-top: 50px;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
-        height: 100px;
         font-weight: 700;
-        width: 90%;
-        padding-bottom: 12px;
-        padding-left: 10%;
         font-size: 2.1rem;
-        font-family: 'Lora', serif;
+        font-family: 'Lora', serif !important;
         color: var(--text-color);
-        position: fixed;
-        background-color: var(--background-color);
         user-select: none;
     }
 `
 
 export const PersonContent = styled.div`
-    margin-top: 140px;
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,6 +48,12 @@ export const PersonContent = styled.div`
             display: flex;
             flex-direction: column;
             gap: 6px;
+            span {
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: #ff0000;
+                user-select: none;
+            }
             label {
                 font-size: 0.9rem;
                 font-weight: 600;
@@ -63,12 +65,12 @@ export const PersonContent = styled.div`
                 border-radius: 10px;
                 font-size: 1rem;
                 padding: 0 15px;
-                border: 2px solid var(--soft-blue) !important;
+                border: 2px solid var(--light-blue);
                 box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
                 transition: 0.5s;
                 &:focus {
-                    border-color: var(--primary-blue);
-                    transition: 0.8s;
+                    border-color: var(--soft-blue);
+                    transition: 0.5s;
                 }
             }
             input[type=submit], input[type=button] {

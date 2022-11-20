@@ -40,19 +40,19 @@ export const Header = () => {
                 <NavLink to="/people"
                   style={({ isActive }) =>
                     isActive ? activeStyle : undefined
-                  }>Pessoa</NavLink>
+                  }>Pessoas</NavLink>
               </li>
               <li>
                 <NavLink to="/address"
                   style={({ isActive }) =>
                     isActive ? activeStyle : undefined
-                  }>Endereço</NavLink>
+                  }>Endereços</NavLink>
               </li>
               <li>
                 <NavLink to="/contact"
                   style={({ isActive }) =>
                     isActive ? activeStyle : undefined
-                  }>Contato</NavLink>
+                  }>Contatos</NavLink>
               </li>
             </ul>
           </nav>

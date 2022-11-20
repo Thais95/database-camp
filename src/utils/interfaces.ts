@@ -3,7 +3,7 @@ import React from 'react';
 export interface IUser {
     login: string,
     senha: string,
-    confirmacao?: string
+    confirmarSenha?: string
 }
 
 export interface IChildren {

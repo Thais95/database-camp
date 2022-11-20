@@ -14,11 +14,11 @@ export const AuthProvider = ({ children }: IChildren) => {
     const userSignup = async (newUser: IUser) => {
         try {
             nProgress.start();
-            
-            await api.post('/auth/create', newUser);
 
-            toast.success('Usuário cadastrado com sucesso!', toastConfig);
-           
+            let user = {login: newUser.login, senha: newUser.senha}            
+            await api.post('/auth/create', user);
+
+            toast.success('Usuário cadastrado com sucesso!', toastConfig);           
             navigate('/');
         } catch (error) {
             toast.error('Houve algum erro, por favor tente novamente!', toastConfig);

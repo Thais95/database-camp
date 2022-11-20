@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContentContainer = styled.div`
-    height: 88vh;
+    height: 92vh;
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
@@ -20,25 +20,21 @@ export const ContentContainer = styled.div`
         border-radius: 15px;
     }
     h1 {
+        width: 100%;
+        margin-top: 50px;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
-        height: 100px;
         font-weight: 700;
-        width: 90%;
-        padding-bottom: 12px;
-        padding-left: 10%;
         font-size: 2.1rem;
-        font-family: 'Lora', serif;
+        font-family: 'Lora', serif !important;
         color: var(--text-color);
-        position: fixed;
-        background-color: var(--background-color);
         user-select: none;
     }
 `
 
 export const ContactContent = styled.div`
-    margin-top: 140px;
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,23 +48,29 @@ export const ContactContent = styled.div`
             display: flex;
             flex-direction: column;
             gap: 6px;
+            span {
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: #ff0000;
+                user-select: none;
+            }
             label {
                 font-size: 0.9rem;
                 font-weight: 600;
             }
-            input[type=text], input[type=date], input[type=select] {
+            input[type=text], input[type=date], input, select {
                 background-color: white;
                 width: 380px;
                 height: 45px;
                 border-radius: 10px;
                 font-size: 1rem;
                 padding: 0 15px;
-                border: 2px solid var(--soft-blue) !important;
+                border: 2px solid var(--primary-blue);
                 box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
                 transition: 0.5s;
                 &:focus {
-                    border-color: var(--primary-blue);
-                    transition: 0.8s;
+                    border-color: var(--soft-blue);
+                    transition: 0.5s;
                 }
             }
             input[type=submit], input[type=button] {
@@ -80,7 +82,7 @@ export const ContactContent = styled.div`
                 font-weight: 600;
                 color: var(--background-color);
                 background-color: var(--primary-blue);
-                border: none;
+                border: none !important;
                 cursor: pointer;
                 transition: 0.5s;
                 &:hover {
@@ -92,10 +94,10 @@ export const ContactContent = styled.div`
                 margin-top: 10px;
                 background-color: transparent;
                 color: var(--primary-blue);
-                border: 2px solid var(--primary-blue);
+                border: 2px solid var(--primary-blue) !important;
                 transition: 0.5s;
                 &:hover {
-                    border-color: var(--soft-blue);
+                    border-color: var(--soft-blue) !important;
                     color: var(--soft-blue);
                     background-color: transparent;
                     transition: 0.5s;
