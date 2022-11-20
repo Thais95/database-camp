@@ -4,8 +4,9 @@ import { PersonasContext } from '../../context/PersonasContext';
 import { IPersona } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { personaFormSchema } from '../../utils/schemas';
-import { Container, ContentContainer, InnerContainer } from '../../components/MainContainer/Container.styled';
+import { Container, InnerContainer } from '../../components/MainContainer/Container.styled';
 import { Header } from '../../components/Header/Header';
+import { ContentContainer, PersonContent } from './CreatePerson.styled';
 import InputMask from 'react-input-mask';
 
 export const AddPersona = () => {
@@ -19,6 +20,8 @@ export const AddPersona = () => {
             <InnerContainer>
                 <Header />
                 <ContentContainer>
+                    <h1>Criar Pessoa</h1>
+                    <PersonContent>
                     <form onSubmit={handleSubmit((data: IPersona) => createPersona(data))}>
                         <div>
                             <label htmlFor="nome">Nome</label>
@@ -48,6 +51,7 @@ export const AddPersona = () => {
                             <input type="submit" value="Cadastrar" />
                         </div>
                     </form>
+                    </PersonContent>
                 </ContentContainer>
             </InnerContainer>
         </Container>

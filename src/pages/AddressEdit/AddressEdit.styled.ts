@@ -59,12 +59,12 @@ export const AddressContent = styled.div`
                 border-radius: 10px;
                 font-size: 1rem;
                 padding: 0 15px;
-                border: 2px solid var(--soft-blue) !important;
+                border: 2px solid var(--primary-blue);
                 box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
                 transition: 0.5s;
                 &:focus {
-                    border-color: var(--primary-blue);
-                    transition: 0.8s;
+                    border-color: var(--soft-blue);
+                    transition: 0.5s;
                 }
             }
             input[type=submit], input[type=button] {

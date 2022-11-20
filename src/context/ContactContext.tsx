@@ -67,15 +67,15 @@ export const ContactProvider = ({ children }: IChildren) => {
         };
     };
 
-
     const createContact = async (data :IContacts) => {
         try {
             nProgress.start();
+            data.telefone = data.telefone.replace(/[^\d]/g, '');
 
             api.defaults.headers.common['Authorization'] = token;
             await api.post(`/contato/${data.idPessoa}`, data);
 
-            toast.success('Pessoa cadastrada com sucesso!', toastConfig);
+            toast.success('Contato adicionado com sucesso!', toastConfig);
             navigate('/people');
         } catch (error){
             console.error(error);
@@ -84,8 +84,6 @@ export const ContactProvider = ({ children }: IChildren) => {
             nProgress.done();
         }
     }
-
-
 
     return (
         <ContactContext.Provider value={{ getContactList, contacts, deleteContact, editContact, createContact }}>
