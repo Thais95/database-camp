@@ -67,8 +67,27 @@ export const ContactProvider = ({ children }: IChildren) => {
     };
 
 
+    const createContact = async (data :IContacts) => {
+        try {
+            nProgress.start();
+
+            api.defaults.headers.common['Authorization'] = token;
+            await api.post(`/contato/${data.idPessoa}`, data);
+
+            toast.success('Pessoa cadastrada com sucesso!', toastConfig);
+            navigate('/people');
+        } catch (error){
+            console.error(error);
+            toast.error('Algo deu errado, por favor tente novamente', toastConfig);
+        } finally {
+            nProgress.done();
+        }
+    }
+
+
+
     return (
-        <ContactContext.Provider value={{ getContactList, contacts, deleteContact, editContact }}>
+        <ContactContext.Provider value={{ getContactList, contacts, deleteContact, editContact, createContact }}>
             {children}
         </ContactContext.Provider>
     )

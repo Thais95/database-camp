@@ -85,6 +85,7 @@ export interface IContactContext {
     getContactList: () => Promise<void>,
     deleteContact: (idContact: number) => Promise<void>,
     editContact: (data: IContacts) => Promise<void>,
+    createContact: (data: IContacts) => Promise<void>,
     contacts: IContacts[]
 }
 
