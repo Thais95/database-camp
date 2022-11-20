@@ -70,7 +70,7 @@ export const AddressCard = styled.div`
             width: 120px;
         }
         .addressBig {
-            width: 340px;
+            width: 360px;
         }
         div{
             display: flex;

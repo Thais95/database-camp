@@ -3,15 +3,15 @@ import { useContext } from 'react';
 import { IContacts } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { contactFormSchema } from '../../utils/schemas';
-import { Container, InnerContainer } from './EditContact.styled';
 import InputMask from 'react-input-mask';
 import { useLocation } from 'react-router-dom';
 import { ContactContext } from '../../context/ContactContext';
+import { Container, InnerContainer } from '../../components/MainContainer/Container.styled';
+import { Header } from '../../components/Header/Header';
 
 export const EditContact = () => {
 
     const { state } = useLocation();
-
 
     const { register, handleSubmit, formState: { errors } } = useForm<IContacts>({
         resolver: yupResolver(contactFormSchema)
@@ -21,13 +21,9 @@ export const EditContact = () => {
     return (
         <Container>
             <InnerContainer>
+                <Header />
                 <h1>Editar Contato</h1>
                 <form onSubmit={handleSubmit((data: IContacts) => editContact(data))}>
-                    <div>
-                        <label htmlFor="idPessoa">ID da Pessoa:</label>
-                        <input type="text" id="idPessoa" {...register("idPessoa")} value={state.idPessoa}/>
-                        {errors.idPessoa && <p>{errors.idPessoa.message}</p>}
-                    </div>
 
                     <div>
                         <label htmlFor="tipoContato">Tipo:</label>
@@ -50,14 +46,15 @@ export const EditContact = () => {
                         {errors.descricao && <p>{errors.descricao.message}</p>}
                     </div>
 
-                    <div>
-                        <label htmlFor="idContato">ID da Contato:</label>
-                        <input type="text" id="idContato" {...register("idContato")} value={state.idContato}/>
-                        {errors.idContato && <p>{errors.idContato.message}</p>}
+                    <div style={{display: 'none'}}>
+                        <input type="text" id="idPessoa" {...register("idPessoa")} value={state.idPessoa}/>
                     </div>
 
-                    <input type="submit" value="Confirmar" />
-                    
+                    <div style={{display: 'none'}}>
+                        <input type="text" id="idContato" {...register("idContato")} value={state.idContato}/>
+                    </div>
+
+                    <input type="submit" value="Confirmar" />                    
                 </form>
             </InnerContainer>
         </Container>

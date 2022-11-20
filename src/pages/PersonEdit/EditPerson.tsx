@@ -6,14 +6,13 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { personaFormSchema } from '../../utils/schemas';
 import { ContentContainer, PersonContent } from './EditPerson.styled';
 import InputMask from 'react-input-mask';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Header } from '../../components/Header/Header';
 import { Container, InnerContainer } from '../../components/MainContainer/Container.styled';
 
 export const EditPerson = () => {
-
+    const navigate = useNavigate();
     const { state } = useLocation();
-
     const { register, handleSubmit, formState: { errors } } = useForm<IPersona>({
         resolver: yupResolver(personaFormSchema)
     });
@@ -51,8 +50,14 @@ export const EditPerson = () => {
                                 {errors.email && <p>{errors.email.message}</p>}
                             </div>
 
+                            <div style={{display: 'none'}}>
+                                <input type="text" id="idPessoa" {...register("idPessoa")} defaultValue={state.idPessoa} />
+                            </div>
+
                             <div>
-                                <input type="submit" value="Cadastrar" />
+                                <input type="submit" value="Salvar" />
+
+                                <input type="button" value="Cancelar" onClick={() => (navigate('/people'))} />
                             </div>
                         </form>
                     </PersonContent>

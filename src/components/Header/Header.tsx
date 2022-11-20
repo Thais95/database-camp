@@ -9,6 +9,10 @@ export const Header = () => {
   const { handleLogout } = useContext(AuthContext);
   const user = localStorage.getItem('user');
 
+  function formatarTexto(str: any) {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
+
   let activeStyle = {
     color: '#f77a6c'
   };
@@ -56,10 +60,10 @@ export const Header = () => {
 
         <div>
           <span className='user'>
-            <FaUserCircle size={18} fill='#fff'/>
-            <p>{user}</p>
+            <FaUserCircle size={22} fill='var(--background-color)'/>
+            <p>{formatarTexto(user)}</p>
           </span>
-          <p className='deslogar' onClick={handleLogout}>Deslogar</p>
+          <p className='deslogar' onClick={handleLogout}>Sair da conta</p>
         </div>
       </div>
     </NavContainer>

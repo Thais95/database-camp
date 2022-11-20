@@ -56,13 +56,13 @@ export const NavContainer = styled.nav`
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: 10px;
+            gap: 5px;
             user-select: none;
-            margin-right: -50px;
+            margin-right: -40px;
             p {
                 color: var(--background-color);
-                font-weight: 600;
-                font-size: 0.9rem;
+                font-weight: 500;
+                font-size: 1.2rem;
             }
         }
         .deslogar {

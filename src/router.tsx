@@ -16,6 +16,7 @@ import { EditPerson } from './pages/PersonEdit/EditPerson';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'nprogress/nprogress.css';
+import { EditAddress } from './pages/AddressEdit/AddressEdit';
 
 export const Router = () => {
   return (
@@ -34,6 +35,7 @@ export const Router = () => {
                   <Route path='/person/create' element={<AddPersona />} />
                   <Route path='/person/edit' element={<EditPerson />} />
                   <Route path='/address' element={<Address />} />
+                  <Route path='/address/edit' element={<EditAddress />} />
                   <Route path='/contact' element={<Contact />} />
                   <Route path='/contact/edit' element={<EditContact />} />
                 </Route>
