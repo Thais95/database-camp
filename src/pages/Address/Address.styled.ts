@@ -58,6 +58,12 @@ export const AddressCard = styled.div`
         max-width: 74vw;
         height: 140px;
     }
+    @media screen and (max-width: 1199px) {
+        max-width: 74vw;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+    }
     &:hover {
         transition: 1s;
         transform: scale(1.02);
@@ -77,6 +83,9 @@ export const AddressCard = styled.div`
             width: 360px;
             @media screen and (max-width: 1600px) {
                 width: 240px;
+            }
+            @media screen and (max-width: 1199px) {
+                width: 200px;
             }
         }
         div{

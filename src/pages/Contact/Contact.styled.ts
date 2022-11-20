@@ -58,6 +58,12 @@ export const ContactCard = styled.div`
         transition: 1s;
         transform: scale(1.02);
     }
+    @media screen and (max-width: 1199px) {
+        max-width: 74vw;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+    }
     .card-content{
         display: flex;
         align-items: center;
@@ -68,6 +74,9 @@ export const ContactCard = styled.div`
             flex-direction: column;
             width: 220px;
             gap: 24px;
+            @media screen and (max-width: 1199px) {
+                width: 180px;
+            }
             span {
                 font-weight: 600;
                 font-size: 0.9rem;
