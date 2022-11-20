@@ -84,19 +84,19 @@ export const AddressProvider = ({ children }: IChildren) => {
         }
     }
 
-    const createAddress = async (data: IAddress) => {
+    const createAddress = async (data: IAddress, ) => {
         try {
             nProgress.start();
 
             api.defaults.headers.common['Authorization'] = token;
-            console.log(data);
 
+            data.cep = data.cep.replace(/[^\d]/g, '');
             data.numero = Number(data.numero)
             data.idPessoa = Number(data.idPessoa)
+        
             console.log(data);
-
-
-            await api.post(`/endereco/${data.idPessoa}`, data);
+            
+            await api.post(`/endereco/${data.idPessoa}?idPessoa=${data.idPessoa}`, data);
 
             toast.success('Endereco cadastrada com sucesso!', toastConfig);
             navigate('/people');

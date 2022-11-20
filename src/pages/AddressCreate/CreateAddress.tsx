@@ -26,6 +26,7 @@ export const CreateAddress = () => {
 
                         <div>
                             <label htmlFor="cep">CEP:</label>
+                            
                             <InputMask mask="99999-999" type="text" id="cep" {...register("cep")}/>
                             {errors.cep && <p>{errors.cep.message}</p>}
                         </div>

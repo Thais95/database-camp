@@ -5,12 +5,17 @@ export const PaginationContainer = styled.div`
     height: 34px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 5px;
     background-color: var(--primary-color);
     position: fixed;
-    gap: 5px;
+    gap: 16px;
     bottom: 0;
     a {
+        display: flex;
+        align-items: flex-end;
+        font-size: 1.065rem;
+        font-weight: 500;
         color: var(--background-color);
         &:hover {
             color: var(--detail-color);
