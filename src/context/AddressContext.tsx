@@ -40,7 +40,7 @@ export const AddressProvider = ({ children }: IChildren) => {
             const { data } = await api.get(`/endereco?pagina=${parseInt(page) - 1}&tamanhoDasPaginas=10`);
             setTotalPages(data.totalPages);
 
-            setAddress(data);
+            setAddress(data.content);
         } catch (error) {
             console.error(error);
             toast.error('Houve algum erro, por favor recarregue a página', toastConfig);
