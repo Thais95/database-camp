@@ -11,7 +11,7 @@ export const NavContainer = styled.nav`
             a {
                 font-size: 1.8rem;
                 font-weight: 600;
-                color: white;
+                color: var(--background-color);
                 p {
                     font-family: 'Lora', serif !important;
                 }
@@ -33,7 +33,7 @@ export const NavContainer = styled.nav`
                 a, p {
                     font-size: 1.2rem;
                     font-weight: 500;
-                    color: white;
+                    color: var(--background-color);
                     transition: all ease-in-out 150ms;
                     &:hover {
                         color: var(--light-blue);
@@ -53,7 +53,17 @@ export const NavContainer = styled.nav`
             }
         }
         .user {
-            color: white;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            user-select: none;
+            margin-right: -50px;
+            p {
+                color: var(--background-color);
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
         }
         .deslogar {
             cursor: pointer;

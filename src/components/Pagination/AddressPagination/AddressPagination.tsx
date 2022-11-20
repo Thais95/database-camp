@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { AddressContext } from '../../../context/AddressContext';
 import { PaginationContainer } from './AddressPagination.styled';
 
-export const PersonaPagination = () => {
+export const AddressPagination = () => {
     const { totalPages, getAddressList } = useContext(AddressContext);
     const [searchParam] = useSearchParams();
     const pageNumber = (searchParam.get('page') || '1');

@@ -11,6 +11,9 @@ export const PaginationContainer = styled.div`
     gap: 5px;
     bottom: 0;
     a {
-        color: white;
+        color: var(--background-color);
+        &:hover {
+            color: var(--detail-color);
+        }
     }
 `

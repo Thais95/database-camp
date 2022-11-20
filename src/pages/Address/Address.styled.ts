@@ -53,19 +53,34 @@ export const AddressCard = styled.div`
     width: 74vw;
     height: 120px;
     background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    border: 2px solid var(--background-color);
     gap: 10px;
     padding: 20px;
+    &:hover {
+        transition: 1s;
+        transform: scale(1.02);
+    }
     .card-content{
         display: flex;
         align-items: center;
-        gap: 40px;
-        font-size: 1rem;
+        gap: 20px;
+        font-size: 0.9rem;
+        i {
+            margin-right: 20px;
+        }
+        .addressSmall {
+            width: 120px;
+        }
+        .addressBig {
+            width: 340px;
+        }
         div{
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            width: 160px;
+            gap: 24px;
             span {
                 font-weight: 600;
                 font-size: 0.9rem;
@@ -79,21 +94,26 @@ export const AddressCard = styled.div`
         gap: 14px;
         button {
             background-color: var(--light-blue);
-            padding: 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
             border: none;
             outline: none;
-            border-radius: 32px;
+            border-radius: 50%;
             color: #fff;
             font-size: 0.875rem;
-            transition: 0.6s;
+            transition: 0.5s;
+            cursor: pointer;
             cursor: pointer;
             &:first-child:hover {
-                transition: 0.6s;
+                transition: 0.5s;
                 transform: scale(1.1);
                 background-color: #0d6efd;
             }
             &:last-child:hover {
-                transition: 0.6s;
+                transition: 0.5s;
                 transform: scale(1.1);
                 background-color: #ff0000;
             }

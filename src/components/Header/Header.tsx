@@ -2,15 +2,15 @@ import { useContext } from 'react'
 import { NavContainer } from './Header.styled'
 import { Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext';
-import logo from '../../assets/logo.svg'
+import { FaUserCircle } from 'react-icons/fa';
+import logo from '../../assets/logo.svg';
 
 export const Header = () => {
   const { handleLogout } = useContext(AuthContext);
   const user = localStorage.getItem('user');
 
   let activeStyle = {
-    color: '#f77a6c',
-    fontWeight: 700
+    color: '#f77a6c'
   };
 
   return (
@@ -33,7 +33,7 @@ export const Header = () => {
                   }>Início</NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard"
+                <NavLink to="/people"
                   style={({ isActive }) =>
                     isActive ? activeStyle : undefined
                   }>Pessoa</NavLink>
@@ -55,7 +55,10 @@ export const Header = () => {
         </div>
 
         <div>
-          <p className='user'>{user}</p>
+          <span className='user'>
+            <FaUserCircle size={18} fill='#fff'/>
+            <p>{user}</p>
+          </span>
           <p className='deslogar' onClick={handleLogout}>Deslogar</p>
         </div>
       </div>

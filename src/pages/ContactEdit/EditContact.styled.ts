@@ -6,7 +6,6 @@ export const Container = styled.div`
     align-items: center;
 `
 
-
 export const InnerContainer = styled.div`
     position: absolute;
     left: 50%;
@@ -21,7 +20,6 @@ export const InnerContainer = styled.div`
     gap: 20px;
     background-color: #ffffff;
     border-radius: 12px;
-    
     h1 {
         font-size: 2.2rem;
         font-weight: 700;
@@ -29,9 +27,6 @@ export const InnerContainer = styled.div`
         margin: 25px 0;
         color: var(--light-blue);
     }
-
-
-
     form {
         display: flex;
         flex-direction: column;
@@ -40,15 +35,12 @@ export const InnerContainer = styled.div`
         justify-content: space-around;
         height: 100%;
         color: var(--detail-secondary-color);
-
-
         div {
             display: flex;
             width: 100%;
             justify-content: space-between;
             align-items: center;
             gap: 30px;
-
             label {
                 font-size: 1.25rem;
                 font-weight: 600;
@@ -58,7 +50,6 @@ export const InnerContainer = styled.div`
                 text-align: justify;
                 color: var(--light-blue);
             }
-
             input, select {
                 background-color: #ffffff;
                 width: 300px;
@@ -72,7 +63,6 @@ export const InnerContainer = styled.div`
                 transition: 0.5s;
                 outline: none;
                 color: var(--text-color);
-
                 &:focus {
                     border-color: var(--soft-blue);
                     transition: all ease-in-out 200ms;
@@ -80,46 +70,25 @@ export const InnerContainer = styled.div`
             }
         }
         input[type=submit] {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 380px;
-                height: 45px;
-                border-radius: 10px;
-                font-size: 1.1rem;
-                font-weight: 600;
-                margin: 30px 0;
-                border: none;
-                cursor: pointer;
-                background-color: var(--light-blue);
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-                color: white;
-                transition: 0.5s;
-
-
-                &:hover {
-                    transition: 0.5s;
-                    border: 2px solid var(--primary-blue);
-                    box-shadow: 0px 0px 10px rgb(111, 196, 201, 0.50);
-                }
-            }
-    }
-
-    
-    .signup {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        user-select: none;
-        text-align: center;
-        a {
-            color: var(--detail-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 380px;
+            height: 45px;
+            border-radius: 10px;
+            font-size: 1.1rem;
             font-weight: 600;
-            transition: 0.4s;
+            margin: 30px 0;
+            border: none;
+            cursor: pointer;
+            background-color: var(--light-blue);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+            color: white;
+            transition: 0.5s;
             &:hover {
-                transition: 0.4s;
-                color: var(--primary-blue);
+                transition: 0.5s;
+                border: 2px solid var(--primary-blue);
+                box-shadow: 0px 0px 10px rgb(111, 196, 201, 0.50);
             }
         }
     }

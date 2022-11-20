@@ -42,11 +42,11 @@ export const ContentContainer = styled.div`
         h3 {
             font-size: 1.4rem;
             font-weight: 400;
-            color: white;
+            color: var(--background-color);
         }
     }
     img {
-        height: 90%;
+        height: 88%;
         -webkit-user-drag: none;
     }
 `

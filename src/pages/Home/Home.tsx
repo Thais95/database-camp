@@ -15,7 +15,7 @@ export const Home = () => {
           <h1>Bom te ver por aqui, <span>{user}</span>!</h1>
           <h3>Aproveite seu banco de dados ao máximo, com a certeza que seus dados estão seguros conosco. Seja na cidade grande ou na floresta, conte com a gente!</h3>
           </div>
-          <img src={bannerHome} alt="" />
+          <img className='floating' src={bannerHome} alt="" />
         </ContentContainer>
       </InnerContainer>
     </Container>

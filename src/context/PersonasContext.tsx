@@ -24,7 +24,7 @@ export const PersonasProvider = ({ children }: IChildren) => {
       await api.post('/pessoa', persona);
 
       toast.success('Pessoa cadastrada com sucesso!', toastConfig);
-      navigate('/dashboard');
+      navigate('/people');
     } catch (error) {
       toast.error('Ocorreu algum erro, por favor tente novamente!', toastConfig);
       console.error(error);
@@ -58,7 +58,7 @@ export const PersonasProvider = ({ children }: IChildren) => {
       await api.put(`/pessoa/${data.idPessoa}`, data);
 
       toast.success("Usuário editado com sucesso!", toastConfig);
-      navigate('/dashboard');
+      navigate('/people');
     } catch (error) {
       console.error(error);
       console.log(data);

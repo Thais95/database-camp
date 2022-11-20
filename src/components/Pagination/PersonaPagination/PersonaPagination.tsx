@@ -25,7 +25,7 @@ export const PersonaPagination = () => {
     return (
         <PaginationContainer>
             {pages.map((item) => (
-                <Link key={item} to={`/dashboard?page=${item}`}>
+                <Link key={item} to={`/people?page=${item}`}>
                     {item}
                 </Link>
             ))}

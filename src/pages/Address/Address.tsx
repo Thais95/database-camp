@@ -6,6 +6,7 @@ import { ContentContainer, AddressCard, AddressContent } from './Address.styled'
 import { AddressContext } from '../../context/AddressContext';
 import { IAddress } from '../../utils/interfaces';
 import { FaEdit, FaMapMarkerAlt, FaTrashAlt } from 'react-icons/fa';
+import { AddressPagination } from '../../components/Pagination/AddressPagination/AddressPagination';
 
 export const Address = () => {
   const { getAddressList, address, deleteAddress } = useContext(AddressContext);
@@ -27,7 +28,7 @@ export const Address = () => {
               return (
                 <AddressCard key={endereco.idEndereco}>
                   <div className='card-content'>
-                    <FaMapMarkerAlt size={30} fill='#1D8E9E' />
+                    <i><FaMapMarkerAlt size={30} fill='#1D8E9E' /></i>
 
                     <div>
                       <p><span>Endereço de:</span> {endereco?.idPessoa}</p>
@@ -39,12 +40,12 @@ export const Address = () => {
                       <p><span>CEP:</span> {endereco?.cep}</p>
                     </div>
 
-                    <div>
+                    <div className='addressSmall'>
                       <p><span>País:</span> {endereco?.pais}</p>
                       <p><span>Estado:</span> {endereco?.estado}</p>
                     </div>
 
-                    <div>
+                    <div className='addressBig'>
                       <p><span>Cidade:</span> {endereco?.cidade}</p>
                       <p><span>Logradouro:</span> {endereco?.logradouro}</p>
                     </div>
@@ -56,8 +57,8 @@ export const Address = () => {
 
                   </div>
                   <div className='card-buttons'>
-                    <button title='Editar' onClick={() => { navigate('/address/edit', { state: endereco }) }}><FaEdit size={16} /></button>
-                    <button title='Remover' onClick={() => { deleteAddress(endereco.idEndereco) }}><FaTrashAlt size={16} /></button>
+                    <button title='Editar endereço' onClick={() => { navigate('/address/edit', { state: endereco }) }}><FaEdit size={18} /></button>
+                    <button title='Remover endereço' onClick={() => { deleteAddress(endereco.idEndereco) }}><FaTrashAlt size={18} /></button>
                   </div>
                 </AddressCard>
               )
@@ -65,6 +66,7 @@ export const Address = () => {
           </AddressContent>
         </ContentContainer>
       </InnerContainer>
+      <AddressPagination />
     </Container>
   )
 }
