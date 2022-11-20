@@ -28,29 +28,35 @@ export const PersonaPagination = () => {
         <PaginationContainer>
             {(pageNumber === '1') ? 
             (<>
-                <FaChevronLeft fill='#ffffff' size={18}/>
+                <FaChevronLeft className='chevron' fill='#ffffff' size={18}/>
                 <Link style={{color: 'var(--detail-color)'}} to ={`/people?page=${pageNumber}`}>{pageNumber}</Link>
                 <Link to ={`/people?page=${Number(pageNumber) + 1}`}>{Number(pageNumber) + 1}</Link>
                 <Link to ={`/people?page=${Number(pageNumber) + 2}`}>{Number(pageNumber) + 2}</Link>
                 <Link to ={`/people?page=${Number(pageNumber) + 3}`}>{Number(pageNumber) + 3}</Link>
+                <Link to ={`/people?page=${Number(pageNumber) + 4}`}>{Number(pageNumber) + 4}</Link>
+                <Link to ={`/people?page=${Number(pageNumber) + 5}`}>{Number(pageNumber) + 5}</Link>
+                <Link to ={`/people?page=${Number(pageNumber) + 6}`}>{Number(pageNumber) + 6}</Link>
                 <BsThreeDots fill='#ffffff'/>
                 <Link to ={`/people?page=${pages.length}`}>{pages.length}</Link>
-                <Link to ={`/people?page=${Number(pageNumber) + 1}`}><FaChevronRight fill='#ffffff' size={18}/></Link>
+                <Link to ={`/people?page=${Number(pageNumber) + 1}`}><FaChevronRight className='chevron' fill='#ffffff' size={18}/></Link>
             </>) : (Number(pageNumber) === pages.length) ? 
 
             (<>
-                <Link to ={`/people?page=${Number(pageNumber) - 1}`}><FaChevronLeft fill='#ffffff'/></Link>
+                <Link to ={`/people?page=${Number(pageNumber) - 1}`}><FaChevronLeft className='chevron' fill='#ffffff'/></Link>
                 <Link to ={`/people?page=1`}>1</Link>
                 <BsThreeDots fill='#ffffff'/>
+                <Link to ={`/people?page=${Number(pageNumber) - 6}`}>{Number(pageNumber) - 6}</Link>
+                <Link to ={`/people?page=${Number(pageNumber) - 5}`}>{Number(pageNumber) - 5}</Link>
+                <Link to ={`/people?page=${Number(pageNumber) - 4}`}>{Number(pageNumber) - 4}</Link>
                 <Link to ={`/people?page=${Number(pageNumber) - 3}`}>{Number(pageNumber) - 3}</Link>
                 <Link to ={`/people?page=${Number(pageNumber) - 2}`}>{Number(pageNumber) - 2}</Link>
                 <Link to ={`/people?page=${Number(pageNumber) - 1}`}>{Number(pageNumber) - 1}</Link>
                 <Link style={{color: 'var(--detail-color)'}} to ={`/people?page=${pageNumber}`}>{pageNumber}</Link>
-                <FaChevronRight fill='#ffffff'/>
-            </>): 
+                <FaChevronRight className='chevron' fill='#ffffff'/>
+            </>) : 
             
             (<>
-                <Link to ={`/people?page=${Number(pageNumber) - 1}`}><FaChevronLeft fill='#ffffff'/></Link>
+                <Link to ={`/people?page=${Number(pageNumber) - 1}`}><FaChevronLeft className='chevron' fill='#ffffff'/></Link>
                 <Link to ={`/people?page=1`}>1</Link>
                 <BsThreeDots fill='#ffffff'/>
                 <Link to ={`/people?page=${Number(pageNumber) - 2}`}>{Number(pageNumber) - 2}</Link>
@@ -60,7 +66,7 @@ export const PersonaPagination = () => {
                 <Link to ={`/people?page=${Number(pageNumber) + 2}`}>{Number(pageNumber) + 2}</Link>
                 <BsThreeDots fill='#ffffff'/>
                 <Link to ={`/people?page=${pages.length}`}>{pages.length}</Link>
-                <Link to ={`/people?page=${Number(pageNumber) + 1}`}><FaChevronRight fill='#ffffff'/></Link>
+                <Link to ={`/people?page=${Number(pageNumber) + 1}`}><FaChevronRight className='chevron' fill='#ffffff'/></Link>
 
             </>) 
             

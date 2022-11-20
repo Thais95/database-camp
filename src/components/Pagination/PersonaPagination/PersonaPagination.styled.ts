@@ -11,6 +11,9 @@ export const PaginationContainer = styled.div`
     position: fixed;
     gap: 16px;
     bottom: 0;
+    .chevron {
+        padding-bottom: 5px;
+    }
     a {
         display: flex;
         align-items: flex-end;

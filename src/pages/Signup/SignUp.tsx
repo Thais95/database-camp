@@ -26,7 +26,7 @@ export const SignUp = () => {
 
                 <form onSubmit={handleSubmit(data => userSignup(data))}>
                     <div>
-                        <label htmlFor="login">Login</label>
+                        <label htmlFor="login">Usuário</label>
                         <input type="text" id="login" {...register("login")} />
                         {errors.login && <span>{errors.login.message}</span>}
                     </div>
@@ -35,6 +35,12 @@ export const SignUp = () => {
                         <label htmlFor="senha">Senha</label>
                         <input type="password" id="senha" {...register("senha")} />
                         {errors.senha && <span>{errors.senha.message}</span>}
+                    </div>
+
+                    <div>
+                        <label htmlFor="confirmarSenha">Confirme sua senha</label>
+                        <input type="password" id="confirmarSenha" {...register("confirmarSenha")} />
+                        {errors.confirmarSenha && <span>{errors.confirmarSenha.message}</span>}
                     </div>
 
                     <div>
