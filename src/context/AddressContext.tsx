@@ -85,17 +85,18 @@ export const AddressProvider = ({ children }: IChildren) => {
         }
     }
 
-    const createAddress = async (data: IAddress) => {
+    const createAddress = async (data: IAddress, ) => {
         try {
             nProgress.start();
             data.cep = data.cep.replace(/[^\d]/g, '');
 
             api.defaults.headers.common['Authorization'] = token;
 
-            data.numero = Number(data.numero);
-            data.idPessoa = Number(data.idPessoa);
-
-            await api.post(`/endereco/${data.idPessoa}`, data);
+            data.cep = data.cep.replace(/[^\d]/g, '');
+            data.numero = Number(data.numero)
+            data.idPessoa = Number(data.idPessoa)
+            
+            await api.post(`/endereco/${data.idPessoa}?idPessoa=${data.idPessoa}`, data);
 
             toast.success('Endereço adicionado com sucesso!', toastConfig);
             navigate('/people');
