@@ -58,7 +58,7 @@ export const Dashboard = () => {
 
                   <div className='card-buttons'>
 
-                    <button title='Adicionar endereço'><FaMapMarkerAlt size={18}/></button>
+                    <button title='Adicionar endereço' onClick={() => { navigate ('/address/create', {state: person})}}><FaMapMarkerAlt size={18}/></button>
 
                     <button title='Adicionar contato' onClick={() => { navigate ('/contact/create', {state: person})}}><FaPhoneAlt size={18}/></button>
 
