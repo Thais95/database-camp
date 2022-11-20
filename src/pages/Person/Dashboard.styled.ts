@@ -20,25 +20,21 @@ export const ContentContainer = styled.div`
         border-radius: 15px;
     }
     h1 {
+        width: 100%;
+        margin-top: 50px;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
-        height: 100px;
         font-weight: 700;
-        width: 90%;
-        padding-bottom: 12px;
-        padding-left: 10%;
-        font-size: 2rem;
+        font-size: 2.1rem;
         font-family: 'Lora', serif !important;
         color: var(--text-color);
-        position: fixed;
-        background-color: var(--background-color);
         user-select: none;
     }
 `
 
 export const DashboardContent = styled.div`
-    margin-top: 140px;
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,7 +102,7 @@ export const PersonCard = styled.div`
             &:nth-child(2):hover {
                 transition: 0.5s;
                 transform: scale(1.1);
-                background-color: #73d77d;
+                background-color: #fe76a8;
             }
             &:nth-child(3):hover {
                 transition: 0.5s;

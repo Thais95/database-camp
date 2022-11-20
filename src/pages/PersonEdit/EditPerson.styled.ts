@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ContentContainer = styled.div`
     height: 88vh;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     ::-webkit-scrollbar {
         width: 14px;
@@ -28,8 +28,8 @@ export const ContentContainer = styled.div`
         width: 90%;
         padding-bottom: 12px;
         padding-left: 10%;
-        font-size: 2rem;
-        font-family: 'Lora', serif !important;
+        font-size: 2.1rem;
+        font-family: 'Lora', serif;
         color: var(--text-color);
         position: fixed;
         background-color: var(--background-color);
@@ -42,22 +42,28 @@ export const PersonContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
     padding-bottom: 40px;
-    div {
-        input[type=text], input[type=date], input[type=select] {
-            background-color: white !important;
-            width: 380px;
-            height: 35px;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            padding: 22px 15px;
-            border: 2px solid var(--soft-blue) !important;
-            box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
-            transition: 0.5s;
-            &:focus {
-                border-color: var(--primary-blue);
-                transition: 0.8s;
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;    
+        div {
+            display: flex;
+            flex-direction: column;
+            input[type=text], input[type=date], input[type=select] {
+                background-color: white;
+                width: 380px;
+                height: 35px;
+                border-radius: 10px;
+                font-size: 1.1rem;
+                padding: 22px 15px;
+                border: 2px solid var(--soft-blue) !important;
+                box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
+                transition: 0.5s;
+                &:focus {
+                    border-color: var(--primary-blue);
+                    transition: 0.8s;
+                }
             }
         }
     }
