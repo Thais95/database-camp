@@ -61,7 +61,7 @@ export const PersonCard = styled.div`
         display: flex;
         align-items: center;
         gap: 40px;
-        font-size: 1.1rem;
+        font-size: 1rem;
         div{
             display: flex;
             flex-direction: column;
