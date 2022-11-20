@@ -5,7 +5,7 @@ import { Header } from '../../components/Header/Header';
 import { ContentContainer, AddressCard, AddressContent } from './Address.styled';
 import { AddressContext } from '../../context/AddressContext';
 import { IAddress } from '../../utils/interfaces';
-import { FaEdit, FaUserAlt, FaTrashAlt } from 'react-icons/fa';
+import { FaEdit, FaMapMarkerAlt, FaTrashAlt } from 'react-icons/fa';
 
 export const Address = () => {
   const { getAddressList, address, deleteAddress } = useContext(AddressContext);
@@ -27,31 +27,31 @@ export const Address = () => {
               return (
                 <AddressCard key={endereco.idEndereco}>
                   <div className='card-content'>
-                    <FaUserAlt size={30} fill='#1D8E9E' />
+                    <FaMapMarkerAlt size={30} fill='#1D8E9E' />
 
                     <div>
-                      <p>Endereço de: {endereco?.idPessoa}</p>
-                      <p>CEP: {endereco?.cep}</p>
+                      <p><span>Endereço de:</span> {endereco?.idPessoa}</p>
+                      <p><span>CEP:</span> {endereco?.cep}</p>
                     </div>
 
                     <div>
-                      <p>Tipo: {endereco?.tipo}</p>
-                      <p>CEP: {endereco?.cep}</p>
+                      <p><span>Tipo:</span> {endereco?.tipo.toLowerCase()}</p>
+                      <p><span>CEP:</span> {endereco?.cep}</p>
                     </div>
 
                     <div>
-                      <p>País: {endereco?.pais}</p>
-                      <p>Estado: {endereco?.estado}</p>
+                      <p><span>País:</span> {endereco?.pais}</p>
+                      <p><span>Estado:</span> {endereco?.estado}</p>
                     </div>
 
                     <div>
-                      <p>Cidade: {endereco?.cidade}</p>
-                      <p>Logradouro: {endereco?.logradouro}</p>
+                      <p><span>Cidade:</span> {endereco?.cidade}</p>
+                      <p><span>Logradouro:</span> {endereco?.logradouro}</p>
                     </div>
 
                     <div>
-                      <p>Numero: {endereco?.numero}</p>
-                      {endereco ? <p>Complemento: {endereco?.complemento}</p> : ''}
+                      <p><span>Numero:</span> {endereco?.numero}</p>
+                      {endereco ? <p><span>Complemento:</span> {endereco?.complemento}</p> : ''}
                     </div>
 
                   </div>
