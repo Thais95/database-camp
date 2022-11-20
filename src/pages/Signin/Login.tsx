@@ -17,7 +17,7 @@ export const Login = () => {
   });
 
   if (token) {
-    return <Navigate to='/dashboard' />
+    return <Navigate to='/home' />
   }
 
   return (
