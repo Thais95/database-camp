@@ -88,3 +88,10 @@ export interface IContacts {
     descricao: string,
     idContato: number
 }
+
+export interface IDeleteContact {
+    show: boolean,
+    setModal: (idContato: boolean) => void,
+    idContato: number | null,
+    telefone: string | null
+}

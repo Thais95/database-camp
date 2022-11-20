@@ -5,7 +5,7 @@ import { ContentContainer, DashboardContent, PersonCard } from './Dashboard.styl
 import { Header } from '../../components/Header/Header';
 import { IPersona } from '../../utils/interfaces';
 import { PersonasContext } from '../../context/PersonasContext';
-import { ConfirmationModal } from '../../components/Modal/Modal';
+import { ConfirmationModal } from '../../components/ModalPersona/Modal';
 import { PersonaPagination } from '../../components/Pagination/PersonaPagination';
 import { FaUserAlt, FaEdit, FaTrashAlt } from 'react-icons/fa';
 
@@ -15,11 +15,11 @@ export const Dashboard = () => {
   const [id, setId] = useState<number | null>(null);
   const [personName, setPersonName] = useState<string | null>(null);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     getPersonasList('1')
   }, [])
-
-  const navigate = useNavigate();
 
   function handleDeleteUser(idPessoa: number, nome: string) {
     setModal(true);
