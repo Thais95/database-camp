@@ -52,6 +52,7 @@ export const AddressProvider = ({ children }: IChildren) => {
     const editAddress = async (data: IAddress) => {
         try {
             nProgress.start();
+            data.cep = data.cep.replace(/[^\d]/g, '');
 
             api.defaults.headers.common['Authorization'] = token;
             await api.put(`/endereco/${data.idEndereco}`, data);

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ContentContainer = styled.div`
     height: 92vh;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     ::-webkit-scrollbar {
         width: 14px;

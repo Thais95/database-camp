@@ -44,10 +44,10 @@ export const Dashboard = () => {
 
                     <div>
                       <p><span>Nome:</span> {person.nome}</p>
-                      <p><span>Email:</span> {person.email}</p>
+                      <p><span>Email:</span> {person.email.toLowerCase()}</p>
                     </div>
                     
-                    <div>
+                    <div className='smallBox'>
                       <p><span>CPF:</span> {person.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')}</p>
                       <p><span>Data de Nasc.:</span> {person.dataNascimento.replace(/(\d{4})-(\d{2})-(\d{2})/, '$3/$2/$1')}</p>
                     </div>

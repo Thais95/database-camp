@@ -41,7 +41,7 @@ export const Address = () => {
                     <i><FaMapMarkerAlt size={30} fill='#1D8E9E' /></i>
 
                     <div>
-                      <p><span>CEP:</span> {endereco?.cep}</p>
+                      <p><span>CEP:</span> {endereco?.cep.replace(/(\d{5})(\d{3})/, '$1-$2')}</p>
                       <p><span>Tipo:</span> {endereco?.tipo.toLowerCase()}</p>
                     </div>
 

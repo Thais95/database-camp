@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ContentContainer = styled.div`
     height: 88vh;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     ::-webkit-scrollbar {
         width: 14px;
@@ -54,6 +54,10 @@ export const AddressCard = styled.div`
     border: 2px solid var(--background-color);
     gap: 10px;
     padding: 20px;
+    @media screen and (max-width: 1600px) {
+        max-width: 74vw;
+        height: 140px;
+    }
     &:hover {
         transition: 1s;
         transform: scale(1.02);
@@ -71,12 +75,18 @@ export const AddressCard = styled.div`
         }
         .addressBig {
             width: 360px;
+            @media screen and (max-width: 1600px) {
+                width: 240px;
+            }
         }
         div{
             display: flex;
             flex-direction: column;
-            width: 160px;
+            width: 200px;
             gap: 24px;
+            @media screen and (max-width: 1600px) {
+                width: 120px;
+            }
             span {
                 font-weight: 600;
                 font-size: 0.9rem;

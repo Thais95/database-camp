@@ -51,6 +51,7 @@ export const ContactProvider = ({ children }: IChildren) => {
     const editContact = async (data: IContacts) => {
         try {
             nProgress.start();
+            data.telefone = data.telefone.replace(/[^\d]/g, '');
 
             api.defaults.headers.common['Authorization'] = token;
             await api.put(`/contato/${data.idContato}`, data);
