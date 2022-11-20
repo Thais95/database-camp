@@ -9,7 +9,7 @@ export const PaginationContainer = styled.div`
     padding-bottom: 5px;
     background-color: var(--primary-color);
     position: fixed;
-    gap: 16px;
+    gap: 20px;
     bottom: 0;
     .chevron {
         padding-bottom: 5px;
