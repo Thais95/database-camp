@@ -53,6 +53,7 @@ export interface IAddressContext {
     getAddressList: (page: string) => Promise<void>,
     deleteAddress: (idAddress: number) => Promise<void>,
     editAddress: (data: IAddress) => Promise<void>,
+    createAddress: (data: IAddress) => Promise<void>,
     addressFromApi: Record<string, string>,
     address: IAddress[],
     totalPages: number

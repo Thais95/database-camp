@@ -84,12 +84,34 @@ export const AddressProvider = ({ children }: IChildren) => {
         }
     }
 
+    const createAddress = async (data: IAddress) => {
+        try {
+            nProgress.start();
 
+            api.defaults.headers.common['Authorization'] = token;
+            console.log(data);
+
+            data.numero = Number(data.numero)
+            data.idPessoa = Number(data.idPessoa)
+            console.log(data);
+
+
+            await api.post(`/endereco/${data.idPessoa}`, data);
+
+            toast.success('Endereco cadastrada com sucesso!', toastConfig);
+            navigate('/people');
+        } catch (error){
+            console.error(error);
+            toast.error('Algo deu errado, por favor tente novamente', toastConfig);
+        } finally {
+            nProgress.done();
+        }
+    }
 
 
 
     return (
-        <AddressContext.Provider value={{ getAddressByCep, addressFromApi, getAddressList, address, deleteAddress, editAddress, totalPages }}>
+        <AddressContext.Provider value={{ getAddressByCep, addressFromApi, getAddressList, address, deleteAddress, editAddress, totalPages, createAddress }}>
             {children}
         </AddressContext.Provider>
     )
