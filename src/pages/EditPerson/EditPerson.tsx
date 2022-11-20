@@ -55,7 +55,7 @@ export const EditPerson = () => {
                     </div>
 
                     <input type="submit" value="Cadastrar" />
-                </form>
+                    </form>
             </InnerContainer>
         </Container>
     )
