@@ -6,7 +6,7 @@ import { Header } from '../../components/Header/Header';
 import { IPersona } from '../../utils/interfaces';
 import { PersonasContext } from '../../context/PersonasContext';
 import { ConfirmationModal } from '../../components/ModalPersona/Modal';
-import { PersonaPagination } from '../../components/Pagination/PersonaPagination';
+import { PersonaPagination } from '../../components/Pagination/PersonaPagination/PersonaPagination';
 import { FaUserAlt, FaEdit, FaTrashAlt } from 'react-icons/fa';
 
 export const Dashboard = () => {

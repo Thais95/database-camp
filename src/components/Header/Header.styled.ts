@@ -44,15 +44,16 @@ export const HeaderStyled = styled.header`
 export const NavContainer = styled.div`
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 100%;
         height: 80px;
         background-color: var(--primary-color);
         position: fixed;
         .linkContainer {
+            width: 74vw;
             display: flex;
-            width: 100%;
+            align-items: center;
             justify-content: space-between;
-            padding: 0 220px;
             div {
                 display: flex;
                 align-items: center;

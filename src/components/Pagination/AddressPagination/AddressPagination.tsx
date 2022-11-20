@@ -1,9 +1,9 @@
 import { useContext, useMemo, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { PersonasContext } from '../../context/PersonasContext';
+import { AddressContext } from '../../../context/AddressContext';
 
 export const PersonaPagination = () => {
-    const { totalPages, getPersonasList } = useContext(PersonasContext);
+    const { totalPages, getAddressList } = useContext(AddressContext);
     const [searchParam] = useSearchParams();
     const pageNumber = (searchParam.get('page') || '1');
 
@@ -18,13 +18,13 @@ export const PersonaPagination = () => {
     }, [totalPages]);
 
     useEffect(() => {
-        getPersonasList(pageNumber);
+        getAddressList(pageNumber);
     }, [pageNumber]);
 
     return (
         <div>
             {pages.map((item) => (
-                <Link key={item} to={`/dashboard?page=${item}`}>
+                <Link key={item} to={`/address?page=${item}`}>
                     {item}
                 </Link>
             ))}
