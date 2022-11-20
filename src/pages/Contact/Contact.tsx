@@ -4,7 +4,7 @@ import { Header } from '../../components/Header/Header';
 import { ContentContainer, ContactCard, ContactContent } from './Contact.styled';
 import { ContactContext } from '../../context/ContactContext';
 import { IContacts } from '../../utils/interfaces';
-import { FaEdit, FaUserAlt, FaTrashAlt } from 'react-icons/fa';
+import { FaEdit, FaPhoneAlt, FaTrashAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { ConfirmationModal } from '../../components/ModalContact/Modal';
 
@@ -37,7 +37,7 @@ export const Contact = () => {
               return (
               <ContactCard key={contact.idContato}>
                 <div className='card-content'>
-                  <FaUserAlt size={30} fill='#1D8E9E' />
+                  <FaPhoneAlt size={30} fill='#1D8E9E' />
 
                   <div>
                     <p><span>Tel:</span> {contact?.telefone}</p>

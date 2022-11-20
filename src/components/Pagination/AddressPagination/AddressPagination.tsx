@@ -1,6 +1,7 @@
 import { useContext, useMemo, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { AddressContext } from '../../../context/AddressContext';
+import { PaginationContainer } from './AddressPagination.styled';
 
 export const PersonaPagination = () => {
     const { totalPages, getAddressList } = useContext(AddressContext);
@@ -22,12 +23,12 @@ export const PersonaPagination = () => {
     }, [pageNumber]);
 
     return (
-        <div>
+        <PaginationContainer>
             {pages.map((item) => (
                 <Link key={item} to={`/address?page=${item}`}>
                     {item}
                 </Link>
             ))}
-        </div>
+        </PaginationContainer>
     )
 }

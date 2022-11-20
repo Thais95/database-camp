@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const ContentContainer = styled.div`
-    margin-top: 80px;
-    height: 100%;
+    height: 88vh;
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -22,11 +21,11 @@ export const ContentContainer = styled.div`
     }
     h1 {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         height: 100px;
         font-weight: 600;
         width: 90%;
-        padding-top: 40px;
+        padding-bottom: 10px;
         padding-left: 220px;
         font-size: 1.8rem;
         color: var(--text-color);

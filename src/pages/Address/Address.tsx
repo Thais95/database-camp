@@ -30,27 +30,27 @@ export const Address = () => {
                     <FaUserAlt size={30} fill='#1D8E9E' />
 
                     <div>
-                      <p>Endereço de: {endereco.idPessoa}</p>
-                      <p>CEP: {endereco.cep}</p>
+                      <p>Endereço de: {endereco?.idPessoa}</p>
+                      <p>CEP: {endereco?.cep}</p>
                     </div>
 
                     <div>
-                      <p>Tipo: {endereco.tipo}</p>
-                      <p>CEP: {endereco.cep}</p>
+                      <p>Tipo: {endereco?.tipo}</p>
+                      <p>CEP: {endereco?.cep}</p>
                     </div>
 
                     <div>
-                      <p>País: {endereco.pais}</p>
-                      <p>Estado: {endereco.estado}</p>
+                      <p>País: {endereco?.pais}</p>
+                      <p>Estado: {endereco?.estado}</p>
                     </div>
 
                     <div>
-                      <p>Cidade: {endereco.cidade}</p>
-                      <p>Logradouro: {endereco.logradouro}</p>
+                      <p>Cidade: {endereco?.cidade}</p>
+                      <p>Logradouro: {endereco?.logradouro}</p>
                     </div>
 
                     <div>
-                      <p>Numero: {endereco.numero}</p>
+                      <p>Numero: {endereco?.numero}</p>
                       {endereco ? <p>Complemento: {endereco?.complemento}</p> : ''}
                     </div>
 
