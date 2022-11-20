@@ -26,8 +26,8 @@ export const ContentContainer = styled.div`
         height: 100px;
         font-weight: 700;
         width: 90%;
-        padding-bottom: 10px;
-        padding-left: 220px;
+        padding-bottom: 12px;
+        padding-left: 10%;
         font-size: 2rem;
         font-family: 'Lora', serif !important;
         color: var(--text-color);

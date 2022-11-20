@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const ContentContainer = styled.div`
     height: 92vh;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
+    background-color: var(--primary-color);
     ::-webkit-scrollbar {
         width: 14px;
         margin-top: 80px;
@@ -22,16 +23,11 @@ export const ContentContainer = styled.div`
     h1 {
         display: flex;
         align-items: flex-end;
-        height: 100px;
         font-weight: 700;
-        width: 90%;
         padding-bottom: 10px;
-        padding-left: 220px;
         font-size: 2rem;
         font-family: 'Lora', serif !important;
-        color: var(--text-color);
-        position: fixed;
-        background-color: var(--background-color);
+        color: var(--detail-color);
         user-select: none;
     }
 `

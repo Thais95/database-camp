@@ -5,7 +5,7 @@ import { Header } from '../../components/Header/Header';
 import { ContentContainer, AddressCard, AddressContent } from './Address.styled';
 import { AddressContext } from '../../context/AddressContext';
 import { IAddress } from '../../utils/interfaces';
-import { FaEdit, FaUserAlt, FaTrashAlt } from 'react-icons/fa';
+import { FaEdit, FaMapMarkerAlt, FaTrashAlt } from 'react-icons/fa';
 
 export const Address = () => {
   const { getAddressList, address, deleteAddress } = useContext(AddressContext);
@@ -27,7 +27,7 @@ export const Address = () => {
               return (
                 <AddressCard key={endereco.idEndereco}>
                   <div className='card-content'>
-                    <FaUserAlt size={30} fill='#1D8E9E' />
+                    <FaMapMarkerAlt size={30} fill='#1D8E9E' />
 
                     <div>
                       <p>Endereço de: {endereco?.idPessoa}</p>
