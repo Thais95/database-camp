@@ -20,25 +20,21 @@ export const ContentContainer = styled.div`
         border-radius: 15px;
     }
     h1 {
+        width: 100%;
+        margin-top: 50px;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
-        height: 100px;
         font-weight: 700;
-        width: 90%;
-        padding-bottom: 12px;
-        padding-left: 10%;
-        font-size: 2rem;
+        font-size: 2.1rem;
         font-family: 'Lora', serif !important;
         color: var(--text-color);
-        position: fixed;
-        background-color: var(--background-color);
         user-select: none;
     }
 `
 
 export const ContactContent = styled.div`
-    margin-top: 140px;
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,19 +49,25 @@ export const ContactCard = styled.div`
     width: 74vw;
     height: 120px;
     background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    border: 2px solid var(--background-color);
     gap: 10px;
     padding: 20px;
+    &:hover {
+        transition: 1s;
+        transform: scale(1.02);
+    }
     .card-content{
         display: flex;
         align-items: center;
         gap: 40px;
-        font-size: 1rem;
+        font-size: 0.9rem;
         div{
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            width: 220px;
+            gap: 24px;
             span {
                 font-weight: 600;
                 font-size: 0.9rem;
@@ -79,21 +81,25 @@ export const ContactCard = styled.div`
         gap: 14px;
         button {
             background-color: var(--light-blue);
-            padding: 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
             border: none;
             outline: none;
-            border-radius: 32px;
+            border-radius: 50%;
             color: #fff;
             font-size: 0.875rem;
-            transition: 0.6s;
+            transition: 0.5s;
             cursor: pointer;
             &:first-child:hover {
-                transition: 0.6s;
+                transition: 0.5s;
                 transform: scale(1.1);
                 background-color: #0d6efd;
             }
             &:last-child:hover {
-                transition: 0.6s;
+                transition: 0.5s;
                 transform: scale(1.1);
                 background-color: #ff0000;
             }

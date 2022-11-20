@@ -51,8 +51,8 @@ export const Contact = () => {
 
                 </div>
                 <div className='card-buttons'>
-                  <button title='Editar' onClick={() => { navigate('/contact/edit', { state: contact }) }}><FaEdit size={16} /></button>
-                  <button title='Remover' onClick={() => { handleDeleteContact(contact.idContato, contact.telefone) }}><FaTrashAlt size={16} /></button>
+                  <button title='Editar contato' onClick={() => { navigate('/contact/edit', { state: contact }) }}><FaEdit size={18} /></button>
+                  <button title='Remover contato' onClick={() => { handleDeleteContact(contact.idContato, contact.telefone) }}><FaTrashAlt size={18} /></button>
                 </div>
               </ContactCard>
               )

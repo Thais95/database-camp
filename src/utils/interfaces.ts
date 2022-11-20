@@ -71,6 +71,13 @@ export interface IAddress {
     idPessoa: number
 }
 
+export interface IDeleteAddress {
+    show: boolean,
+    setModal: (idEndereco: boolean) => void,
+    idEndereco: number | null,
+    cep: string | null
+}
+
 
 // CONTACTS INTERFACES
 

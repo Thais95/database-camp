@@ -7,7 +7,7 @@ import { IPersona } from '../../utils/interfaces';
 import { PersonasContext } from '../../context/PersonasContext';
 import { ConfirmationModal } from '../../components/ModalPersona/Modal';
 import { PersonaPagination } from '../../components/Pagination/PersonaPagination/PersonaPagination';
-import { FaUserAlt, FaEdit, FaTrashAlt } from 'react-icons/fa';
+import { FaUserAlt, FaEdit, FaTrashAlt, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 
 export const Dashboard = () => {
   const { getPersonasList, persona } = useContext(PersonasContext);
@@ -54,8 +54,14 @@ export const Dashboard = () => {
                   </div>
 
                   <div className='card-buttons'>
-                    <button title='Editar' onClick={() => { navigate('/persona/edit', {state: person}) }}><FaEdit size={16}/></button>
-                    <button title='Remover' onClick={() => { handleDeleteUser(person.idPessoa, person.nome) }}><FaTrashAlt size={16}/></button>
+
+                    <button title='Adicionar endereço'><FaMapMarkerAlt size={18}/></button>
+
+                    <button title='Adicionar contato'><FaPhoneAlt size={18}/></button>
+
+                    <button title='Editar pessoa' onClick={() => { navigate('/person/edit', {state: person}) }}><FaEdit size={18}/></button>
+
+                    <button title='Remover pessoa' onClick={() => { handleDeleteUser(person.idPessoa, person.nome) }}><FaTrashAlt size={18}/></button>
                   </div>
                 </PersonCard>
               )
