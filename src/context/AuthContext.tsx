@@ -36,6 +36,7 @@ export const AuthProvider = ({ children }: IChildren) => {
             api.defaults.headers.common['Authorization'] = data;
     
             localStorage.setItem('token', data);
+            localStorage.setItem('user', user.login);
 
             navigate('/home')
         } catch (error) {

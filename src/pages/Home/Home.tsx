@@ -4,14 +4,16 @@ import { ContentContainer } from './Home.styled';
 import bannerHome from '../../assets/banner-home.svg';
 
 export const Home = () => {
+  const user = localStorage.getItem('user');
+
   return (
     <Container>
       <InnerContainer>
         <Header />
         <ContentContainer>
           <div>
-          <h1>Bem vindo, Página inicial</h1>
-          <h3></h3>
+          <h1>Bom te ver por aqui, <span>{user}</span>!</h1>
+          <h3>Aproveite seu banco de dados ao máximo, com a certeza que seus dados estão seguros conosco. Seja na cidade grande ou na floresta, conte com a gente!</h3>
           </div>
           <img src={bannerHome} alt="" />
         </ContentContainer>

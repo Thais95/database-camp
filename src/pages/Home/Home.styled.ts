@@ -23,15 +23,27 @@ export const ContentContainer = styled.div`
         border: solid 2px transparent;
         border-radius: 15px;
     }
-    h1 {
+    div {
         display: flex;
-        align-items: flex-end;
-        font-weight: 700;
-        font-size: 2.5rem;
-        font-family: 'Lora', serif !important;
-        color: var(--detail-color);
-        text-transform: uppercase;
-        user-select: none;
+        flex-direction: column;
+        gap: 50px;
+        width: 400px;
+        margin-right: -200px;
+        h1 {
+            font-weight: 700;
+            font-size: 3rem;
+            font-family: 'Lora', serif !important;
+            color: var(--background-color);
+            user-select: none;
+        }
+        span {
+            color: var(--detail-color);
+        }
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: white;
+        }
     }
     img {
         height: 90%;
