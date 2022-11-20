@@ -11,7 +11,7 @@ export const userSignupFormSchema = yup.object().shape({
 })
 
 export const personaFormSchema = yup.object().shape({
-    nome: yup.string().required('Por favor, digite seu nome').min(2, 'O nome precisa ter no mínimo 2 caracteres'),
+    nome: yup.string().required('Por favor, digite seu nome').min(2, 'O nome precisa ter no mínimo 2 caracteres').trim(),
     dataNascimento: yup.string().required('Por favor, digite sua data de nascimento').trim(),
     cpf: yup.string().required('Por favor, digite seu CPF').length(14, 'O CPF precisa conter 11 dígitos').trim(),
     email: yup.string().required('Por favor, digite seu email').email('Por favor, digite um email válido').trim()
@@ -24,13 +24,13 @@ export const addressFormSchema = yup.object().shape({
     numero: yup.number().required('O número é obrigatório').min(1, 'O número não pode ser menor do que 1'),
     complemento: yup.string().trim(),
     cidade: yup.string().required('A cidade é obrigatória').min(3, 'A cidade precisa ter no mínimo 3 letras').trim(),
-    estado: yup.string().required('O estado é obrigatório'),
+    estado: yup.string().required('O estado é obrigatório').trim(),
     pais: yup.string().required('O país é obrigatório').trim()
 })
 
 export const contactFormSchema = yup.object().shape({
     idPessoa: yup.number().required(),
     tipoContato: yup.string().required('Selecione o tipo de contato'),
-    telefone: yup.string().required('Informe o telefone com DDD, Ex: (54)91234-1234').min(11),
-    descricao: yup.string().required('Informe uma descrição')
+    telefone: yup.string().required('Informe o telefone com DDD, Ex: (54)91234-1234').min(11, 'O número precisa ter no mínimo 11 dígitos').trim(),
+    descricao: yup.string().required('Informe uma descrição').trim()
 })

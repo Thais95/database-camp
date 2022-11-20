@@ -1,13 +1,11 @@
 import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
-import { PersonasContext } from '../../context/PersonasContext';
 import { IContacts } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { contactFormSchema, personaFormSchema } from '../../utils/schemas';
+import { contactFormSchema } from '../../utils/schemas';
 import { Container, InnerContainer } from './EditContact.styled';
 import InputMask from 'react-input-mask';
 import { useLocation } from 'react-router-dom';
-import { Header } from '../../components/Header/Header';
 import { ContactContext } from '../../context/ContactContext';
 
 export const EditContact = () => {
@@ -58,7 +56,6 @@ export const EditContact = () => {
                         {errors.idContato && <p>{errors.idContato.message}</p>}
                     </div>
 
-                    
                     <input type="submit" value="Confirmar" />
                     
                 </form>

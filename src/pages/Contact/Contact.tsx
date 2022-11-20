@@ -13,11 +13,11 @@ export const Contact = () => {
 
   const { getContactList, contacts, deleteContact } = useContext(ContactContext);
 
-  useEffect(() =>{
+  useEffect(() => {
     getContactList()
   }, [])
-  
-  
+
+
   return (
     <Container>
       <InnerContainer>
@@ -28,32 +28,32 @@ export const Contact = () => {
 
             {contacts?.map((contact: IContacts) => {
               return <ContactCard key={contact.idContato}>
-           
-                  <div className='card-content'>
-                    <FaUserAlt size={30} fill='#1D8E9E'/>
 
-                    <div>
-                      <p> {contact?.telefone}</p>
-                      <p>Tipo: {contact?.tipoContato}</p>
-                     
-                    </div>
-                 
-                    <div>
-                      <p>ID da Pessoa: {contact.idPessoa}</p>
-                      <p>ID do Contato: {contact?.idContato}</p>
-                    </div>
+                <div className='card-content'>
+                  <FaUserAlt size={30} fill='#1D8E9E' />
 
-                    <div>
-                      <p>Descrição: {contact?.descricao}</p>
-                    </div>
+                  <div>
+                    <p>Tel: {contact?.telefone}</p>
+                    <p>Tipo: {contact?.tipoContato.toLowerCase()}</p>
 
                   </div>
 
-                  <div className='card-buttons'>
-                    <button onClick={() => { navigate('/contact/edit', {state: contact}) }}><FaEdit size={16}/></button>
-                    <button onClick={() => { deleteContact(contact.idContato) }}><FaTrashAlt size={16}/></button>
+                  <div>
+                    <p>ID da Pessoa: {contact.idPessoa}</p>
+                    <p>ID do Contato: {contact?.idContato}</p>
                   </div>
-                
+
+                  <div>
+                    <p>Descrição: {contact?.descricao}</p>
+                  </div>
+
+                </div>
+
+                <div className='card-buttons'>
+                  <button onClick={() => { navigate('/contact/edit', { state: contact }) }}><FaEdit size={16} /></button>
+                  <button onClick={() => { deleteContact(contact.idContato) }}><FaTrashAlt size={16} /></button>
+                </div>
+
               </ContactCard>
             })}
           </ContactContent>

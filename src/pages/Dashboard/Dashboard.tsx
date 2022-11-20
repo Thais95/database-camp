@@ -6,8 +6,8 @@ import { Header } from '../../components/Header/Header';
 import { IPersona } from '../../utils/interfaces';
 import { PersonasContext } from '../../context/PersonasContext';
 import { ConfirmationModal } from '../../components/Modal/Modal';
-import { PersonaPagination } from '../../components/PersonaPagination';
-import { FaUserAlt, FaEdit, FaTrashAlt } from 'react-icons/fa'
+import { PersonaPagination } from '../../components/Pagination/PersonaPagination';
+import { FaUserAlt, FaEdit, FaTrashAlt } from 'react-icons/fa';
 
 export const Dashboard = () => {
   const { getPersonasList, persona } = useContext(PersonasContext);

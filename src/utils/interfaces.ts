@@ -9,6 +9,7 @@ export interface IChildren {
     children?: React.ReactNode
 }
 
+
 // AUTHENTICATION INTERFACE
 
 export interface IAuthContext {
@@ -16,6 +17,7 @@ export interface IAuthContext {
     handleLogin: (user: IUser) => Promise<void>,
     handleLogout: () => Promise<void>,
 }
+
 
 // PERSONA INTERFACE
 
@@ -43,7 +45,18 @@ export interface IDeletePersona {
     nome: string | null
 }
 
+
 // ADDRESS INTERFACE
+
+export interface IAddressContext {
+    getAddressByCep: (cep: string) => Promise<void>,
+    getAddressList: (page: string) => Promise<void>,
+    deleteAddress: (idAddress: number) => Promise<void>,
+    editAddress: (data: IAddress) => Promise<void>,
+    addressFromApi: Record<string, string>,
+    address: IAddress[],
+    totalPages: number
+}
 
 export interface IAddress {
     cep: string,
@@ -53,13 +66,11 @@ export interface IAddress {
     complemento: string,
     cidade: string,
     estado: string,
-    pais: string
+    pais: string,
+    idEndereco: number,
+    idPessoa: number
 }
 
-export interface IAddressContext {
-    getAddressByCep: (cep: string) => Promise<void>,
-    addressFromApi: Record<string, string>
-}
 
 // CONTACTS INTERFACES
 
@@ -67,8 +78,7 @@ export interface IContactContext {
     getContactList: () => Promise<void>,
     deleteContact: (idContact: number) => Promise<void>,
     editContact: (data: IContacts) => Promise<void>,
-    contacts: IContacts[],
-    totalPages: number
+    contacts: IContacts[]
 }
 
 export interface IContacts {

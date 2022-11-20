@@ -5,8 +5,8 @@ import { IPersona } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { personaFormSchema } from '../../utils/schemas';
 import { Container, ContentContainer, InnerContainer } from './../../components/DashboardContainer/Container.styled';
-import InputMask from 'react-input-mask';
 import { Header } from '../../components/Header/Header';
+import InputMask from 'react-input-mask';
 
 export const AddPersona = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<IPersona>({
