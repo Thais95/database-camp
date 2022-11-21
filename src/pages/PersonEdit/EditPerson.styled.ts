@@ -19,8 +19,12 @@ export const ContentContainer = styled.div`
         border: solid 2px transparent;
         border-radius: 15px;
     }
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     h1 {
-        width: 100%;
         margin-top: 50px;
         display: flex;
         align-items: center;
@@ -29,6 +33,16 @@ export const ContentContainer = styled.div`
         font-size: 2.1rem;
         font-family: 'Lora', serif !important;
         color: var(--text-color);
+        user-select: none;
+        padding-right: 10px;
+    }
+    h2 {
+        font-family: 'Lora', serif !important;
+        color: var(--primary-blue);
+        margin-top: 50px;
+        font-size: 2.1rem;
+        font-weight: 700;
+        text-align: center;
         user-select: none;
     }
 `

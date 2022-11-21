@@ -31,6 +31,14 @@ export const ContentContainer = styled.div`
         color: var(--text-color);
         user-select: none;
     }
+    h2 {
+        font-family: 'Lora', serif !important;
+        color: var(--primary-blue);
+        font-size: 2.1rem;
+        font-weight: 700;
+        text-align: center;
+        user-select: none;
+    }
 `
 
 export const AddressContent = styled.div`

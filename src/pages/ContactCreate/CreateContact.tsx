@@ -24,7 +24,8 @@ export const CreateContact = () => {
             <InnerContainer>
                 <Header />
                 <ContentContainer>
-                    <h1>Adicionar contato</h1>
+                    <h1>Adicionar contato para</h1>
+                    <h2>{state.nome}</h2>
                     <ContactContent>
                     <form onSubmit={handleSubmit((data: IContacts) => createContact(data))}>
                         <div>

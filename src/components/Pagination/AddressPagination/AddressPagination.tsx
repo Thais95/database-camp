@@ -28,7 +28,7 @@ export const AddressPagination = () => {
         <PaginationContainer>
         {(pageNumber === '1') ? 
         (<>
-            <FaChevronLeft className='chevron' fill='#ffffff' size={18}/>
+            <a><FaChevronLeft className='chevron' fill='#ffffff' size={18}/></a>
             <Link style={{color: 'var(--detail-color)'}} to ={`/address?page=${pageNumber}`}>{pageNumber}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 1}`}>{Number(pageNumber) + 1}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 2}`}>{Number(pageNumber) + 2}</Link>
@@ -36,7 +36,7 @@ export const AddressPagination = () => {
             <Link to ={`/address?page=${Number(pageNumber) + 4}`}>{Number(pageNumber) + 4}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 5}`}>{Number(pageNumber) + 5}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 6}`}>{Number(pageNumber) + 6}</Link>
-            <BsThreeDots fill='#ffffff'/>
+            <a><BsThreeDots fill='#ffffff'/></a>
             <Link to ={`/address?page=${pages.length}`}>{pages.length}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 1}`}><FaChevronRight className='chevron' fill='#ffffff' size={18}/></Link>
         </>) : (Number(pageNumber) === pages.length) ? 
@@ -44,7 +44,7 @@ export const AddressPagination = () => {
         (<>
             <Link to ={`/address?page=${Number(pageNumber) - 1}`}><FaChevronLeft className='chevron' fill='#ffffff' size={18}/></Link>
             <Link to ={`/address?page=1`}>1</Link>
-            <BsThreeDots fill='#ffffff'/>
+            <a><BsThreeDots fill='#ffffff'/></a>
             <Link to ={`/address?page=${Number(pageNumber) - 6}`}>{Number(pageNumber) - 6}</Link>
             <Link to ={`/address?page=${Number(pageNumber) - 5}`}>{Number(pageNumber) - 5}</Link>
             <Link to ={`/address?page=${Number(pageNumber) - 4}`}>{Number(pageNumber) - 4}</Link>
@@ -52,7 +52,7 @@ export const AddressPagination = () => {
             <Link to ={`/address?page=${Number(pageNumber) - 2}`}>{Number(pageNumber) - 2}</Link>
             <Link to ={`/address?page=${Number(pageNumber) - 1}`}>{Number(pageNumber) - 1}</Link>
             <Link style={{color: 'var(--detail-color)'}} to ={`/address?page=${pageNumber}`}>{pageNumber}</Link>
-            <FaChevronRight className='chevron' fill='#ffffff' size={18}/>
+            <a><FaChevronRight className='chevron' fill='#ffffff' size={18}/></a>
         </>) : (Number(pageNumber) === 2) ?
                 
         (<>
@@ -64,7 +64,7 @@ export const AddressPagination = () => {
             <Link to ={`/address?page=${Number(pageNumber) + 3}`}>{Number(pageNumber) + 3}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 4}`}>{Number(pageNumber) + 4}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 5}`}>{Number(pageNumber) + 5}</Link>
-            <BsThreeDots fill='#ffffff'/>
+            <a><BsThreeDots fill='#ffffff'/></a>
             <Link to ={`/address?page=${pages.length}`}>{pages.length}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 1}`}><FaChevronRight className='chevron' fill='#ffffff' size={18}/></Link>
         </>) : (Number(pageNumber) > 2 && Number(pageNumber) < 4) ?
@@ -78,7 +78,7 @@ export const AddressPagination = () => {
             <Link to ={`/address?page=${Number(pageNumber) + 2}`}>{Number(pageNumber) + 2}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 3}`}>{Number(pageNumber) + 3}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 4}`}>{Number(pageNumber) + 4}</Link>
-            <BsThreeDots fill='#ffffff'/>
+            <a><BsThreeDots fill='#ffffff'/></a>
             <Link to ={`/address?page=${pages.length}`}>{pages.length}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 1}`}><FaChevronRight className='chevron' fill='#ffffff' size={18}/></Link>
         </>) : (Number(pageNumber) === (pages.length - 1)) ? 
@@ -86,7 +86,7 @@ export const AddressPagination = () => {
         (<>
             <Link to ={`/address?page=${Number(pageNumber) - 1}`}><FaChevronLeft className='chevron' fill='#ffffff' size={18}/></Link>
             <Link to ={`/address?page=1`}>1</Link>
-            <BsThreeDots fill='#ffffff'/>
+            <a><BsThreeDots fill='#ffffff'/></a>
             <Link to ={`/address?page=${Number(pageNumber) - 5}`}>{Number(pageNumber) - 5}</Link>
             <Link to ={`/address?page=${Number(pageNumber) - 4}`}>{Number(pageNumber) - 4}</Link>
             <Link to ={`/address?page=${Number(pageNumber) - 3}`}>{Number(pageNumber) - 3}</Link>
@@ -100,7 +100,7 @@ export const AddressPagination = () => {
         (<>
             <Link to ={`/address?page=${Number(pageNumber) - 1}`}><FaChevronLeft className='chevron' fill='#ffffff' size={18}/></Link>
             <Link to ={`/address?page=1`}>1</Link>
-            <BsThreeDots fill='#ffffff'/>
+            <a><BsThreeDots fill='#ffffff'/></a>
             <Link to ={`/address?page=${Number(pageNumber) - 4}`}>{Number(pageNumber) - 4}</Link>
             <Link to ={`/address?page=${Number(pageNumber) - 3}`}>{Number(pageNumber) - 3}</Link>
             <Link to ={`/address?page=${Number(pageNumber) - 2}`}>{Number(pageNumber) - 2}</Link>
@@ -114,13 +114,13 @@ export const AddressPagination = () => {
         (<>
             <Link to ={`/address?page=${Number(pageNumber) - 1}`}><FaChevronLeft className='chevron' fill='#ffffff' size={18}/></Link>
             <Link to ={`/address?page=1`}>1</Link>
-            <BsThreeDots fill='#ffffff'/>
+            <a><BsThreeDots fill='#ffffff'/></a>
             <Link to ={`/address?page=${Number(pageNumber) - 2}`}>{Number(pageNumber) - 2}</Link>
             <Link to ={`/address?page=${Number(pageNumber) - 1}`}>{Number(pageNumber) - 1}</Link>
             <Link style={{color: 'var(--detail-color)'}} to ={`/address?page=${pageNumber}`}>{pageNumber}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 1}`}>{Number(pageNumber) + 1}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 2}`}>{Number(pageNumber) + 2}</Link>
-            <BsThreeDots fill='#ffffff'/>
+            <a><BsThreeDots fill='#ffffff'/></a>
             <Link to ={`/address?page=${pages.length}`}>{pages.length}</Link>
             <Link to ={`/address?page=${Number(pageNumber) + 1}`}><FaChevronRight className='chevron' fill='#ffffff' size={18}/></Link>
 

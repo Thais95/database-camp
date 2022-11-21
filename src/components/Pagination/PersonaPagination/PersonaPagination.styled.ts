@@ -25,6 +25,7 @@ export const PaginationContainer = styled.div`
         font-size: 1.065rem;
         font-weight: 500;
         color: var(--background-color);
+        user-select: none;
         transition: all ease-in-out 50ms;
         &:hover {
             color: var(--detail-color);

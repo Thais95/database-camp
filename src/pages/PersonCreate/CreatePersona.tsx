@@ -8,19 +8,21 @@ import { Container, InnerContainer } from '../../components/MainContainer/Contai
 import { Header } from '../../components/Header/Header';
 import { ContentContainer, PersonContent } from './CreatePerson.styled';
 import InputMask from 'react-input-mask';
+import { useNavigate } from 'react-router-dom';
 
 export const AddPersona = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<IPersona>({
         resolver: yupResolver(personaFormSchema)
     });
     const { createPersona } = useContext(PersonasContext);
+    const navigate = useNavigate();
 
     return (
         <Container>
             <InnerContainer>
                 <Header />
                 <ContentContainer>
-                    <h1>Criar Pessoa</h1>
+                    <h1>Adicionar Pessoa</h1>
                     <PersonContent>
                     <form onSubmit={handleSubmit((data: IPersona) => createPersona(data))}>
                         <div>
@@ -48,7 +50,9 @@ export const AddPersona = () => {
                         </div>
 
                         <div>
-                            <input type="submit" value="Cadastrar" />
+                            <input type="submit" value="Adicionar" />
+
+                            <input type="button" value="Cancelar" onClick={() => (navigate('/people'))} />
                         </div>
                     </form>
                     </PersonContent>

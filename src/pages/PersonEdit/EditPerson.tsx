@@ -23,7 +23,8 @@ export const EditPerson = () => {
             <InnerContainer>
                 <Header />
                 <ContentContainer>
-                    <h1>Editar Pessoa</h1>
+                    <div className='title'><h1>Editar</h1>
+                    <h2>{state.nome}</h2></div>
                     <PersonContent>
                         <form onSubmit={handleSubmit((data: IPersona) => editPersona(data))}>
                             <div>
