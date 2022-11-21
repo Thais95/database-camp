@@ -38,6 +38,7 @@ export const ContentContainer = styled.div`
         }
         span {
             color: var(--detail-color);
+            font-family: 'Lora', serif !important;
         }
         h3 {
             font-size: 1.4rem;

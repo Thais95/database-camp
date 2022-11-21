@@ -32,7 +32,7 @@ export const Login = () => {
 
         <form onSubmit={handleSubmit(data => handleLogin(data))}>
           <div>
-            <label htmlFor="login">Login</label>
+            <label htmlFor="login">Usuário</label>
             <input type="text" id="login" {...register("login")} />
             {errors.login && <span>{errors.login.message}</span>}
           </div>

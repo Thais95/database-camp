@@ -54,25 +54,25 @@ export const InnerContainer = styled.div`
     }
     h1 {
         font-size: 1.45rem;
-        font-weight: 700;
+        font-weight: 600;
         user-select: none;
         margin-bottom: 28px;
         color: var(--primary-color);
         @media screen and (max-width: 1600px) {
             margin-bottom: 16px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
     }
     h2 {
-        font-size: 3.6rem;
+        font-size: 3.8rem;
         font-weight: 700;
         user-select: none;
-        margin-bottom: 74px;
+        margin-bottom: 54px;
         color: var(--detail-color);
         font-family: 'Lora', serif;
         @media screen and (max-width: 1600px) {
             margin-bottom: 32px;
-            font-size: 3.1rem;
+            font-size: 3rem;
         }
     }
     form {
@@ -83,7 +83,7 @@ export const InnerContainer = styled.div`
         justify-content: center;
         color: var(--detail-secondary-color);
         @media screen and (max-width: 1600px) {
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
         div {
             display: flex;
@@ -95,6 +95,10 @@ export const InnerContainer = styled.div`
                 margin-bottom: 5px;
                 padding-left: 15px;
                 user-select: none;
+                @media screen and (max-width: 1600px) {
+                    font-size: 0.9rem;
+                    margin-bottom: 2px;
+                }
             }
             span {
                 bottom: -25px;
@@ -104,6 +108,9 @@ export const InnerContainer = styled.div`
                 position: absolute;
                 color: #ff0000;
                 user-select: none;
+                @media screen and (max-width: 1600px) {
+                    font-size: 0.85rem;
+                }
             }
             input[type=text], input[type=password] {
                 background-color: #fff;
@@ -116,6 +123,11 @@ export const InnerContainer = styled.div`
                 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
                 border-radius: 10px;
                 transition: 0.5s;
+                @media screen and (max-width: 1600px) {
+                    height: 40px;
+                    width: 340px;
+                    font-size: 0.95rem;
+                }
                 &:focus {
                     box-shadow: 0px 0px 10px rgba(111, 196, 201, 0.50);
                     border-color: var(--soft-blue);
@@ -141,7 +153,9 @@ export const InnerContainer = styled.div`
                 color: white;
                 transition: 0.5s;
                 @media screen and (max-width: 1600px) {
-                    margin-top: 12px;
+                    margin-top: 0px;
+                    height: 40px;
+                    font-size: 1rem;
                 }
                 &:hover {
                     transition: 0.5s;
