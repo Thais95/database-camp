@@ -29,5 +29,6 @@ export const PaginationContainer = styled.div`
         &:hover {
             color: var(--detail-color);
         }
+        
     }
 `

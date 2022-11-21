@@ -80,7 +80,7 @@ export const PersonCard = styled.div`
     border-radius: 10px;
     gap: 10px;
     padding: 20px;
-    transition: 1s;
+    transition: 0.5s;
     border: 2px solid var(--background-color);
     @media screen and (max-width: 1600px) {
         max-width: 74vw;

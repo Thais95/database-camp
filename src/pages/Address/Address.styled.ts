@@ -54,6 +54,7 @@ export const AddressCard = styled.div`
     border: 2px solid var(--background-color);
     gap: 10px;
     padding: 20px;
+    transition: 0.5s;
     @media screen and (max-width: 1600px) {
         max-width: 74vw;
         height: 140px;

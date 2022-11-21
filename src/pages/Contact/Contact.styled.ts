@@ -54,6 +54,7 @@ export const ContactCard = styled.div`
     border: 2px solid var(--background-color);
     gap: 10px;
     padding: 20px;
+    transition: 0.5s;
     &:hover {
         transition: 1s;
         transform: scale(1.02);
