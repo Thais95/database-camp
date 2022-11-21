@@ -36,7 +36,6 @@ export const CreateAddress = () => {
                     <h2>{state.nome}</h2>
                     <AddressContent>
                         <form onSubmit={handleSubmit((data: IAddress) => createAddress(data))}>
-
                             <div>
                                 <label htmlFor="cep">CEP:</label>
                                 <InputMask mask="99999-999" type="text" id="cep" {...register("cep")} onBlur={() => getAddressByCep(cep)} />

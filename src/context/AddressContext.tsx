@@ -85,14 +85,13 @@ export const AddressProvider = ({ children }: IChildren) => {
         }
     }
 
-    const createAddress = async (data: IAddress, ) => {
+    const createAddress = async (data: IAddress) => {
         try {
             nProgress.start();
             data.cep = data.cep.replace(/[^\d]/g, '');
 
             api.defaults.headers.common['Authorization'] = token;
-
-            data.cep = data.cep.replace(/[^\d]/g, '');
+            
             data.numero = Number(data.numero)
             data.idPessoa = Number(data.idPessoa)
             
