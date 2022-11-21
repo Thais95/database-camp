@@ -19,6 +19,7 @@ import 'nprogress/nprogress.css';
 import { EditAddress } from './pages/AddressEdit/AddressEdit';
 import { CreateContact } from './pages/ContactCreate/CreateContact';
 import { CreateAddress } from './pages/AddressCreate/CreateAddress';
+import { Error } from './components/Error/Error';
 
 export const Router = () => {
   return (
@@ -45,6 +46,8 @@ export const Router = () => {
                   <Route path='/contact' element={<Contact />} />
                   <Route path='/contact/create' element={<CreateContact />} />
                   <Route path='/contact/edit' element={<EditContact />} />
+
+                  <Route path='*' element={<Error />} />
                 </Route>
               </Routes>
             </AddressProvider>
