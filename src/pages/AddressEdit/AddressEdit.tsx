@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { IAddress } from '../../utils/interfaces';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { addressFormSchema } from '../../utils/schemas';
@@ -14,10 +14,18 @@ export const EditAddress = () => {
     const { state } = useLocation();
     const navigate = useNavigate();
 
-    const { register, handleSubmit, formState: { errors } } = useForm<IAddress>({
+    const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<IAddress>({
         resolver: yupResolver(addressFormSchema)
     });
-    const { editAddress } = useContext(AddressContext);
+    const { editAddress, getAddressByCep, addressFromApi } = useContext(AddressContext);
+
+    const cep = watch('cep');
+
+    useEffect(() => {
+        setValue('logradouro', addressFromApi?.logradouro);
+        setValue('cidade', addressFromApi?.localidade);
+        setValue('estado', addressFromApi?.uf);
+    }, [addressFromApi]);
 
     return (
         <Container>
@@ -29,7 +37,7 @@ export const EditAddress = () => {
                         <form onSubmit={handleSubmit((data: IAddress) => editAddress(data))}>
                             <div>
                                 <label htmlFor="cep">CEP:</label>
-                                <InputMask mask="99999-999" type="text" id="cep" {...register("cep")} defaultValue={state.cep} />
+                                <InputMask mask="99999-999" type="text" id="cep" {...register("cep") } defaultValue={state.cep} onBlur={() => getAddressByCep(cep)} />
                                 {errors.cep && <span>{errors.cep.message}</span>}
                             </div>
 
